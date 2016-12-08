@@ -30,7 +30,7 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'devise'
-gem "paperclip", github: "thoughtbot/paperclip", ref: "c38bb31"
+gem "paperclip"
 gem 'simple_form', '~> 3.2.1'
 gem 'rails4-autocomplete'
 gem 'ransack'
