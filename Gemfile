@@ -36,6 +36,49 @@ gem 'rails4-autocomplete'
 gem 'ransack'
 gem 'will_paginate', '~> 3.1'
 
+gem 'bootstrap-sass', '~> 3.3.6'
+gem 'toastr-rails'
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'mini_exiftool_vendored'
+gem 'dotenv-rails', groups: [:development, :test]
+gem 'gmaps4rails'
+# gem 'country_select', '>= 2.5.2'
+gem 'country_select'
+
+
+gem 'jquery-ui-rails'
+# gem 'jquery-ui-sass-rails'
+gem 'paypal-sdk-adaptivepayments'
+gem 'cancancan'
+gem 'figaro'
+gem 'aws-sdk', '< 2.0'
+gem 'font-awesome-sass'
+
+
+gem 'rails_12factor', group: :production
+gem 'rails_admin'
+
+#Cocoon
+gem "cocoon"
+
+#Language
+gem 'language_list', '~> 1.1'
+#RANKS
+gem 'merit'
+
+# Messages
+gem 'mailboxer'
+#TRACK PAGE VIEWS
+#MARKDOWN
+gem 'rails-bootstrap-markdown'
+# Community
+gem 'sanitize', '~> 3.0.3'
+
+gem 'html-pipeline', '~> 1.11.0'
+gem 'gemoji', '~> 2.1.0'
+gem 'github-markdown', '~> 0.6.7'
+gem "ckeditor"
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
