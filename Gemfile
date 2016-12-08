@@ -52,7 +52,7 @@ gem 'jquery-ui-rails'
 gem 'paypal-sdk-adaptivepayments'
 gem 'cancancan'
 gem 'figaro'
-gem 'aws-sdk', '< 2.0'
+gem 'aws-sdk'
 gem 'font-awesome-sass'
 
 
