@@ -1,30 +1,7 @@
 
-@import "materialize/components/color";
-$primary-color: color("red", "lighten-2") !default;
-$secondary-color: color("red", "lighten-2") !default;
-.ilike-blue-container {
-  @extend .blue, .lighten-4;
-}
-//-----------------------button-border
-
-// Shared styles
-$button-border: none !default;
-$button-background-focus: lighten($secondary-color, 4%) !default;
-$button-font-size: 1.3rem !default;
-$button-height: 36px !default;
-$button-padding: 0 2rem !default;
-$button-radius: 2px !default;
-$button-raised-background: $secondary-color !default;
-$button-raised-background-hover: lighten($button-raised-background, 5%) !default;
-$button-raised-color: #fff !default;
-
-@import "materialize";
-@import "toastr";
 @import "user";
 @import "posts";
 @import "messages";
-@import "font-awesome-sprockets";
-@import "font-awesome";
 @import "jquery-ui";
 
 // -----------------------------
