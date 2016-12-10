@@ -18,9 +18,7 @@
 //= require ckeditor/init
 //= require cocoon
 //= require toastr
-//= require underscore
 //= require_tree .
-//= require private_pub
 $(document).ready(function() {
     $(".button-collapse").sideNav();
     $(".dropdown-button").dropdown();
