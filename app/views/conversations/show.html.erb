@@ -1,0 +1,55 @@
+
+<% if(!user_signed_in?) %>
+
+<% else %>
+  <% if current_user.revisers.present? %>
+
+  <% end %>
+
+<% end %>
+<br>
+<div class="container3">
+
+
+  <p style="font-size: 3rem;color: #fff;font-weight: 700;">Chatting With
+    <%= render 'conversations/participants', conversation: @conversation %>
+  </p>
+
+  <div class="panel panel-default">
+    <div class="panel-heading"><%= @conversation.subject %></div>
+
+    <div class="panel-body">
+      <div class="messages">
+        <% @conversation.receipts_for(current_user).order(:created_at).each do |receipt| %>
+          <div class="media">
+            <% message = receipt.message %>
+            <div class="media-left">
+              <!-- <%= message.sender.email %> -->
+              <%= message.sender.fullname %>
+
+            </div>
+
+            <div class="media-body">
+              <h6 class="media-heading"><%= message.sender.fullname %>
+                says at <%= message.created_at.strftime("%-d %B %Y") %></h6>
+              <%= markdownify message.body %>
+            </div>
+          </div>
+        <% end %>
+        <%= form_tag reply_conversation_path(@conversation), method: :post do %>
+          <div class="form-group">
+
+            <%= text_area_tag 'body', nil, cols: 3, class: 'form-control', placeholder: 'Type something...', required: true %>
+          </div>
+          <%= submit_tag "Send Message", class: 'btn btn-primary' %>
+          <a href="/conversations" class="btn btn-primary">Go Back</a>
+
+        <% end %>
+
+
+      </div>
+
+    </div>
+  </div>
+
+</div>

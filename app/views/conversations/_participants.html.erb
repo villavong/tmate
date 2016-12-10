@@ -1,0 +1,8 @@
+<% conversation.participants.each do |participant| %>
+  <% unless participant == current_user %>
+
+    <a href="/users/<%= participant.id %>"><%= participant.fullname %></a>
+
+  <% end %>
+
+<% end %>

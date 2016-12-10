@@ -1,0 +1,56 @@
+<div class="container3">
+
+
+  <li class="list-group-item clearfix" style="margin-bottom:1rem;">
+    Chatting with <strong>
+
+      <% conversation.participants.each do |r| %>
+      <% unless r == current_user %>
+      <a href="/users/<%= r.id %>"><%= r.fullname %></a>
+      <% end %>
+
+      <% end %>
+
+    </strong> <br>
+
+
+
+
+    <div class="btn-group-vertical pull-right">
+      <% if conversation.is_trashed?(current_user) %>
+        <%= link_to 'Restore', restore_conversation_path(conversation), class: 'btn btn-xs btn-info', method: :post %>
+      <% else %>
+        <%= link_to 'Move to trash', conversation_path(conversation), class: 'btn btn-xs btn-danger', method: :delete,
+                    data: {confirm: 'Are you sure?'} %>
+<br>
+        <% if conversation.is_unread?(current_user) %>
+          <%= link_to 'Mark as read', mark_as_read_conversation_path(conversation),
+                      class: 'btn btn-xs btn-info', method: :post %>
+        <% end %>
+      <% end %>
+    </div>
+
+
+<br>
+
+    <%= link_to conversation_path(conversation) do %>
+      <!-- Title : <%= conversation.subject  %> -->
+      <!-- <%= conversation.last_message.body %> -->
+      <p>
+        Last Message :
+        <%= truncate(conversation.last_message.body, length: 30) %>
+
+        <!-- <% if conversation.last_message.sender == current_user %>
+        (Me)
+        <% else %> -->
+        (<%= conversation.last_message.sender.email %>)
+        <!-- <% end %> -->
+
+        (<span class="text-muted"><%= conversation.last_message.created_at.strftime("%-d %B %Y") %></span>)</p>
+    <% end %>
+
+
+
+  </li>
+
+</div>
