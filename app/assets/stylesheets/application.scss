@@ -2,9 +2,12 @@
 @import "materialize/components/color";
 $primary-color: color("blue-grey", "lighten-1") !default;
 $secondary-color: color("red", "lighten-2") !default;
+$navbar-font-color: #373738 !default;
+
 .ilike-blue-container {
   @extend .blue, .lighten-4;
 }
+
 //-----------------------button-border
 
 // Shared styles

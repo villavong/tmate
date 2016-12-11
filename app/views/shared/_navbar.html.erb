@@ -1,12 +1,12 @@
-<nav style="">
+<nav>
   <div class="nav-wrapper lighten-2">
     <div class="container">
 
 
-      <a href="/" class="brand-logo" style="">Tweedlemate</a>
+      <a href="/" class="brand-logo" style="color:#fff;">Tweedlemate</a>
       <!-- <a class="navbar-brand navbar-brand-centered" style="width: 200px;height: 30px;padding-top: 5px;margin-top: 18px;" href="/"><%= image_tag('/tweedle.png')%></a> -->
 
-      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse" style="color:#fff;"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
         <!-- <li><a href="/posts" style="color: #ffc107;">Posts</a></li> -->
         <% if(!user_signed_in?) %>
@@ -18,12 +18,12 @@
 
           <li><a href="/boards/4">USA<%= image_tag('new.gif')%></a></li>
         </ul>
-        <li><a href="/users?utf8=%E2%9C%93&q%5Bcountry_cont%5D=&q%5Bcity_cont%5D=&q%5Bschool_cont%5D=&q%5Bmajor_cont%5D=&commit=Search">Search Profile</a></li>
-        <li><a href="/school_list">Categories<%= image_tag('new.gif')%></a></li>
+        <li><a href="/users?utf8=%E2%9C%93&q%5Bcountry_cont%5D=&q%5Bcity_cont%5D=&q%5Bschool_cont%5D=&q%5Bmajor_cont%5D=&commit=Search" style="color:#fff;">Search Profile</a></li>
+        <li><a href="/school_list" style="color:#fff;">Categories<%= image_tag('new.gif')%></a></li>
         <!-- <li><a href="/how-to-use/kr">Contact</a></li> -->
-        <li><a class="dropdown-button" href="#!" data-activates="dropdown_full_nav" >Tips&Talk!<i class="material-icons right">arrow_drop_down</i></a></li>
-        <li> <%= link_to "Log In", new_user_session_path %> </li>
-        <li style="color: #ffc107;"> <%= link_to "Sign Up", new_user_registration_path %> </li>
+        <li ><a class="dropdown-button" href="#!" data-activates="dropdown_full_nav" style="color:#fff;">Tips&Talk!<i class="material-icons right">arrow_drop_down</i></a></li>
+        <li> <%= link_to "Log In", new_user_session_path, style: "color:#fff;" %> </li>
+        <li> <%= link_to "Sign Up", new_user_registration_path, style: "color:#fff;" %> </li>
 
 
 
@@ -36,14 +36,14 @@
 
           <li><a href="/boards/4">USA<%= image_tag('new.gif')%></a></li>
         </ul>
-        <li><a href="/users?utf8=%E2%9C%93&q%5Bcountry_cont%5D=&q%5Bcity_cont%5D=&q%5Bschool_cont%5D=&q%5Bmajor_cont%5D=&commit=Search">Search Profile</a></li>
-        <li><a href="/school_list">Categories<%= image_tag('new.gif')%></a></li>
+        <li><a href="/users?utf8=%E2%9C%93&q%5Bcountry_cont%5D=&q%5Bcity_cont%5D=&q%5Bschool_cont%5D=&q%5Bmajor_cont%5D=&commit=Search" style="color:#fff;">Search Profile</a></li>
+        <li><a href="/school_list" style="color:#fff;">Categories<%= image_tag('new.gif')%></a></li>
         <!-- <li><a href="/how-to-use/kr">Contact</a></li> -->
-        <li><a class="dropdown-button" href="#!" data-activates="dropdown_full_talk" >Tips&Talk!<i class="material-icons right">arrow_drop_down</i></a></li>
+        <li><a class="dropdown-button" href="#!" data-activates="dropdown_full_talk" style="color:#fff;">Tips&Talk!<i class="material-icons right">arrow_drop_down</i></a></li>
 
-        <li><a class="dropdown-button" href="#!" data-activates="dropdown_full_nav">My Menu<i class="material-icons right">arrow_drop_down</i></a></li>
+        <li><a class="dropdown-button" href="#!" data-activates="dropdown_full_nav" style="color:#fff;">My Menu<i class="material-icons right">arrow_drop_down</i></a></li>
         <li>
-          <a href="/conversations"><i class="fa fa-envelope-o" aria-hidden="true"><%=unread_messages_count%></i> Messages</a>
+          <a href="/conversations" style="color:#fff;"><i class="fa fa-envelope-o" aria-hidden="true"><%=unread_messages_count%></i> Messages</a>
 
         </li>
         <ul id="dropdown_full_nav" class="dropdown-content">
@@ -69,7 +69,7 @@
         <li><a href="/received">Requests Received</a></li>
         <!-- <li role="separator" class="nav-divider"></li> -->
 
-        <li><a class="dropdown-button" href="#!" data-activates="dropdown_mobile">Tips&talk<%= image_tag('new.gif')%><i class="material-icons right">arrow_drop_down</i></a></li>
+        <li><a class="dropdown-button" href="#!" data-activates="dropdown_mobile">Tips&talk<%= image_tag('new.gif')%><i class="material-icons right" >arrow_drop_down</i></a></li>
         <ul id="dropdown_mobile" class="dropdown-content">
           <li><a href="/boards/1">Seoul<%= image_tag('new.gif')%></a></li>
           <li><a href="/boards/2">Japan<%= image_tag('new.gif')%></a></li>
@@ -87,7 +87,6 @@
     </div>
 
   </div>
-<nav>
 
     <!-- <%= image_tag('/tweedlelong.png')%> -->
 	<!-- <div class="">

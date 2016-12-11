@@ -1,13 +1,13 @@
-// a {
-//     color: #4f4f4f;
-//     text-decoration: none;
-// }
-// a:hover
-// {
-//      color:#fff;
-//      text-decoration:none;
-//      cursor:pointer;
-// }
+a {
+    color: #4f4f4f;
+    text-decoration: none;
+}
+a:hover
+{
+     text-decoration:none;
+     cursor:pointer;
+}
+
 #senpai {
 	float: left;
 	min-height: 37rem;
@@ -123,7 +123,7 @@
 	background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-	background-image: image-url("/glo.jpg");
+	background-image: image-url("glo.jpg");
 	box-shadow: 2px 5px 12px 1px rgba(112,112,112,1);
 	padding-top: 1rem;
 	clear: both;
@@ -136,7 +136,7 @@
 		}
 		#step {
 		width: 55%;
-		max-height: 20rem;
+		// max-height: 20rem;
 		// max-height: 15rem;
 		margin: .5rem auto;
 	  border-radius: .35rem;
@@ -194,7 +194,7 @@
 	background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-	background-image: image-url("/lib.jpg");
+	background-image: image-url("lib.jpg");
 	box-shadow: 2px 5px 12px 1px rgba(112,112,112,1);
 	padding-top: 1rem;
 
