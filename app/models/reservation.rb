@@ -3,13 +3,6 @@ class Reservation < ApplicationRecord
   belongs_to :reviser
 
 
-  has_attached_file :document
-  validates_attachment :document, :content_type => { :content_type => %w(application/pdf application/msword application/vnd.openxmlformats-officedocument.wordprocessingml.document) }
-
-  validates_attachment_size :document, :less_than => 10.megabytes
-  has_attached_file :completed_doc
-
-   validates_attachment :completed_doc, :content_type => { :content_type => %w(application/pdf application/msword application/vnd.openxmlformats-officedocument.wordprocessingml.document) }
 
   # def download_url(style_name=:original)
   #   document.s3_bucket.objects[document.s3_object(style_name).key].url_for(:read,

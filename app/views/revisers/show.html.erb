@@ -89,29 +89,6 @@
 							<%= f.submit "Send Now", class: "btn btn-primary", style: "float:right;margin-top:20px;" %>
 							<% end %>
 
-							<!-- <div class="row" style="margin-top:50px;">
-								<div class="col-md-12">
-									<h3>Reviews <span id="average_rating"></span>(<%= @reviews.count %>)</h3>
-									<div class="container">
-										<div>
-											<%= render 'reviews/form' %>
-
-											<%= render 'reviews/form' if @booked && !@hasReview %>
-										</div>
-										<div>
-											<%= render 'reviews/list' %>
-										</div>
-									</div>
-								</div>
-							</div> -->
-
-							<script>
-								$('#average_rating').raty({
-									path: '/assets',
-									readOnly: true,
-									score: <%= @reviser.average_rating %>
-								});
-							</script>
 						</div>
 
 
