@@ -13,3 +13,5 @@ module Tmate3
     # -- all .rb files in that directory are automatically loaded.
   end
 end
+
+Rails.application.config.assets.precompile += %w( ckeditor/* )
