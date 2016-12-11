@@ -236,7 +236,7 @@ $(function() {
   <div class="col s12 m12 l9" style="padding-left:0;">
     <div class="portrait_container">
       <% @arrUsers.each do |user| %>
-          <% if user.uid? || user.avatar? %>
+          <% if user.uid? || user.profile_img? %>
             <% end %>
             <% user.revisers.each do |reviser| %>
               <% if reviser.active == true %>
