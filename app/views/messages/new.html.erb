@@ -66,10 +66,10 @@
 
   			<div id="contain-pic-show">
   				<div class="thumbnail-show" style="width:300px;height:300px;overflow:hidden;background-color:black;">
-  					<!-- <%= image_tag @chosen_recipient.avatar.url(:medium), :id => "image-tag", class: "portrait" %> -->
+  					<!-- <%= image_tag @chosen_recipient.profile_img.url(:medium), :id => "image-tag", class: "portrait" %> -->
             <!-- <%= image_tag "http://graph.facebook.com/#{@chosen_recipient.uid}/picture?type=large" %> -->
-            <% if @chosen_recipient.avatar? %>
-              <%= image_tag @chosen_recipient.avatar.url(:medium), :id => "image-tag", class: "portrait" %>
+            <% if @chosen_recipient.profile_img? %>
+              <%= image_tag @chosen_recipient.profile_img.url(:medium), :id => "image-tag", class: "portrait" %>
             <% else %>
               <% if @chosen_recipient.uid? %>
               <%= image_tag "http://graph.facebook.com/#{@chosen_recipient.uid}/picture?type=large" %>
@@ -78,7 +78,7 @@
 
   				</div>
   				</div>
-  				
+
 
   			</div>
 
