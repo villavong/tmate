@@ -33,7 +33,7 @@ gem 'devise'
 gem "paperclip"
 gem 'simple_form', '~> 3.2.1'
 gem 'rails4-autocomplete'
-gem 'ransack', github: 'activerecord-hackery/ransack', branch:"master"
+gem 'ransack'
 gem 'will_paginate', '~> 3.1'
 
 gem 'toastr-rails'
