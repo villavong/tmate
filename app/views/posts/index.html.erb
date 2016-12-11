@@ -1,29 +1,37 @@
-<p id="notice"><%= notice %></p>
 
-<h1>Posts</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Body</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div id="podcast_show">
+	<div class="wrapper_skinny">
+		<%= link_to "New Post", new_post_path, class: "waves-effect waves-light btn right" %>
+	</div>
 
-  <tbody>
-    <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.title %></td>
-        <td><%= post.body %></td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+	<div id="episodes">
+		<div class="wrapper_skinny">
+			<ul class="cf">
+				<% @posts.each do |post| %>
+					<li class="cf">
+						<div class="episode_thumbnail">
+							<%= link_to image_tag(post.photo.url(:medium)), post %>
 
-<br>
+						</div>
+						<div class="episode_overview">
+							<h2><%= link_to post.title, post %></h2>
+							<p class="description"><%= truncate(post.content, length: 300) %></p>
+							<p class="description">Written By <%= post.user_id %></p>
+							<p class="description"><%= time_ago_in_words(post.created_at)  %></p>
 
-<%= link_to 'New Post', new_post_path %>
+
+
+						</div>
+					</li>
+				<% end %>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<div class="comment">
+	<div id="edit_button">
+	</div>
+</div>
+<%= will_paginate @posts, previous_label: "Previous", next_label: "Next" %>

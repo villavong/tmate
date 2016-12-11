@@ -1,0 +1,143 @@
+<div class="real">
+  <row>
+    <div class="col-md-12">
+      <div id="real-note">
+        <!-- 실제 합격생에게 상담받으세요 <br> -->
+
+        <!-- Want to Help other students coming <br>to your school? <br><br> -->
+          <!-- Want to study abroad?  <br>
+          Ask students who's already there -->
+
+          Do you want real
+          information
+          <br>about your next school ?
+          <br>
+          Talk to real students!
+
+      </div>
+    </div>
+
+    <div class="col-md-12">
+      <div id="real">
+        Language barrier, Reviewing Application, Finding an accomodation...  <br>
+
+        <!-- How to apply ? How to get in ? How to live there ? <br> -->
+        Get in touch with an actual accepted student   <br>
+        who has already walked the same path.  <br>
+
+        Schedule a consultation with a senior and get prepared  <br>
+      </div>
+    </div>
+  </row>
+
+
+</div>
+
+<div class="white_background">
+  <div class="container_index">
+        <div class="container-body">
+
+          <div class="row">
+
+              <%= search_form_for @search do |f| %>
+
+                <div class="form-inline">
+
+                  <div class="form-row">
+
+                      <div class="col-md-12" style="text-align:center;margin-bottom:2rem;font-size:2.2rem;font-weight:700;">
+                        Search Profiles
+                        <br>
+                      </div>
+                  </div>
+                  <div class="form-row">
+
+
+                    <div class="input-field col s12 m12 l4">
+                      <div class="form-group">
+                        <%= f.label :school_cont, "School", style: "font-weight:700;" %> <br>
+                        <% options = options_for_select(User.yes.order(:school).uniq.pluck(:school)) %>
+                        <%= f.select :school_cont, options, {include_blank: "Select University"}, style: "width: 300px;" %>
+
+                      </div>
+                    </div>
+
+                    <div class="input-field col s12 m412 l4">
+                      <div class="form-group">
+                        <%= f.label :school_cont, "School", style: "font-weight:700;" %> <br>
+
+                        <%= f.autocomplete_field :school_cont, autocomplete_user_school_suggestions_path, id: "auto"  %>
+
+
+
+                      </div>
+
+                    </div>
+
+
+                    <br>
+                    <br>
+                  </div>
+
+                </div>
+
+
+
+                <div class="row">
+                  <div class="col-3">
+
+                  </div>
+                  <div class="col-9 pull-right">
+                  <br>  *You may leave blanks for any column
+
+                  </div>
+
+                </div>
+                <!-- <div id="submit">
+                  <%= link_to "All Profiles", "/users?utf8=%E2%9C%93&q%5Bcountry_cont%5D=&q%5Bcity_cont%5D=&q%5Bschool_cont%5D=&q%5Bmajor_cont%5D=&commit=Search", class: "waves-effect waves-light btn" %>
+
+                </div> -->
+                <div id="submit" >
+                  <%= f.submit "Search", class: "waves-effect waves-light btn right", style: "" %>
+
+                </div>
+              <% end %>
+
+
+
+          </div>
+
+        </div>
+
+
+
+    </div>
+
+
+
+
+</div>
+<br>
+
+
+
+
+<br>
+
+<!-- <div class="white_background">
+  <div class="container_index" >
+
+  </div>
+</div> -->
+
+
+
+
+
+<!-- <br>
+
+<div class="commission">
+  <i>Commission Free Until October!!</i>
+</div>
+<br><br>
+ -->

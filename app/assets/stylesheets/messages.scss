@@ -3,21 +3,33 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .nav {
-  li.active {
+  li{
     a {
-      background-color: #feb65e;
+      color:#fff;
     }
     a:hover {
-      background-color: #feb65e;
+      color: #ffc107;
     }
     a:focus {
-      background-color: #feb65e;
+      color: #ffc107;
+
+    }
+  }
+  li.active {
+    a {
+      color: #ffc107;
+
+    }
+    a:hover {
+     color: #ffc107;
+    }
+    a:focus {
+      background-color: #ffc107;
 
     }
   }
 }
 .nav-pills {
   li.active {
-
   }
 }

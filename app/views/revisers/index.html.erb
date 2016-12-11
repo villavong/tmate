@@ -1,0 +1,42 @@
+<%= render 'shared/profileNavbar' %>
+<div class="container3" style="min-width:900px;">
+<div class="position-col" style="height:100%;">
+
+
+	<div class="col-xs-8 " style="margin-top:100px;min-width:700px;margin:0 auto;float:none;">
+		<div class="display-revisers" style="border-color:#DDDDDD;border-width:5px; border-style: solid;border-radius:5px;background-color:#DDDDDD;">
+
+			<div class="panel-heading" style="color:white;background-color:#45d1b8;border-radius:5px;font-size:20px;">
+				Your Registered Reviser Types
+			</div>
+
+
+
+			<div class="panel-body" style="background-color:#DDDDDD;">
+			<div class="row">
+			<div class="" style="border-radius:10px;background-color:white;border-style:solid;border-color:white;">
+				<p style="font-size:19px;margin:40px;">You may add up to 6 different types of revising methods. It is advised that you have good knowledge on the subject before applying as your ratings will be applied permanently from other users. You may update or add more reviser types/methods.</p>
+				</div>
+			</div>
+			<% @revisers.each do |reviser| %>
+			<%= link_to edit_reviser_path(reviser) do %>
+				<div class="row" style="background-color:white;border-radius:15px;margin-top:10px;color:black;">
+					<div class="col-xs-1">
+					<%= render 'shared/essayicons', reviser: reviser %>
+					</div>
+					<div class="col-xs-8" style="margin-left:10px;">
+					<h2 style=""><%= reviser.essay_type %></h2>
+					</div>
+					<div class="col-xs-2" style="">
+					</div>
+				</div>
+			<% end %>
+			<% end %>
+			</div>
+			<%= link_to "Add Reviesr Type", new_reviser_path(@reviser), class: "btn btn-primary" %>
+		</div>
+	</div>
+
+
+</div>
+</div>

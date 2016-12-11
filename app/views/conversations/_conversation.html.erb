@@ -1,4 +1,4 @@
-<div class="container3">
+<div class="container3 hoverable" style="border: 2px solid #dde0ec;border-radius: .35rem;margin-bottom:1rem;padding: 1rem 1rem;">
 
 
   <li class="list-group-item clearfix" style="margin-bottom:1rem;">
@@ -6,7 +6,7 @@
 
       <% conversation.participants.each do |r| %>
       <% unless r == current_user %>
-      <a href="/users/<%= r.id %>"><%= r.fullname %></a>
+      <a style="color:#4f4f4f;" href="/users/<%= r.id %>"><%= r.fullname %></a>
       <% end %>
 
       <% end %>
@@ -18,14 +18,14 @@
 
     <div class="btn-group-vertical pull-right">
       <% if conversation.is_trashed?(current_user) %>
-        <%= link_to 'Restore', restore_conversation_path(conversation), class: 'btn btn-xs btn-info', method: :post %>
+        <%= link_to 'Restore', restore_conversation_path(conversation), class: 'waves-effect waves-light btn', method: :post %>
       <% else %>
-        <%= link_to 'Move to trash', conversation_path(conversation), class: 'btn btn-xs btn-danger', method: :delete,
+        <%= link_to 'To Trash', conversation_path(conversation), class: 'waves-effect waves-light btn', method: :delete,
                     data: {confirm: 'Are you sure?'} %>
 <br>
         <% if conversation.is_unread?(current_user) %>
           <%= link_to 'Mark as read', mark_as_read_conversation_path(conversation),
-                      class: 'btn btn-xs btn-info', method: :post %>
+                      class: 'waves-effect waves-light btn', style: 'margin-top:.5rem;', method: :post %>
         <% end %>
       <% end %>
     </div>
@@ -36,7 +36,7 @@
     <%= link_to conversation_path(conversation) do %>
       <!-- Title : <%= conversation.subject  %> -->
       <!-- <%= conversation.last_message.body %> -->
-      <p>
+      <p style="color:#4f4f4f;">
         Last Message :
         <%= truncate(conversation.last_message.body, length: 30) %>
 

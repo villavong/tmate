@@ -1,0 +1,99 @@
+<nav style="">
+  <div class="nav-wrapper lighten-2">
+    <div class="container">
+
+
+      <a href="/" class="brand-logo" style="">Tweedlemate</a>
+      <!-- <a class="navbar-brand navbar-brand-centered" style="width: 200px;height: 30px;padding-top: 5px;margin-top: 18px;" href="/"><%= image_tag('/assets/tweedle.png')%></a> -->
+
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <!-- <li><a href="/posts" style="color: #ffc107;">Posts</a></li> -->
+        <% if(!user_signed_in?) %>
+        <ul id="dropdown_full_nav" class="dropdown-content">
+          <li><a href="/boards/1">Seoul<%= image_tag('/assets/new.gif')%></a></li>
+          <li><a href="/boards/2">Japan<%= image_tag('/assets/new.gif')%></a></li>
+
+          <li><a href="/boards/3">Europe<%= image_tag('/assets/new.gif')%></a></li>
+
+          <li><a href="/boards/4">USA<%= image_tag('/assets/new.gif')%></a></li>
+        </ul>
+        <li><a href="/users?utf8=%E2%9C%93&q%5Bcountry_cont%5D=&q%5Bcity_cont%5D=&q%5Bschool_cont%5D=&q%5Bmajor_cont%5D=&commit=Search">Search Profile</a></li>
+        <li><a href="/school_list">Categories<%= image_tag('/assets/new.gif')%></a></li>
+        <!-- <li><a href="/how-to-use/kr">Contact</a></li> -->
+        <li><a class="dropdown-button" href="#!" data-activates="dropdown_full_nav" >Tips&Talk!<i class="material-icons right">arrow_drop_down</i></a></li>
+        <li> <%= link_to "Log In", new_user_session_path %> </li>
+        <li style="color: #ffc107;"> <%= link_to "Sign Up", new_user_registration_path %> </li>
+
+
+
+        <% else %>
+        <ul id="dropdown_full_talk" class="dropdown-content">
+          <li><a href="/boards/1">Seoul<%= image_tag('/assets/new.gif')%></a></li>
+          <li><a href="/boards/2">Japan<%= image_tag('/assets/new.gif')%></a></li>
+
+          <li><a href="/boards/3">Europe<%= image_tag('/assets/new.gif')%></a></li>
+
+          <li><a href="/boards/4">USA<%= image_tag('/assets/new.gif')%></a></li>
+        </ul>
+        <li><a href="/users?utf8=%E2%9C%93&q%5Bcountry_cont%5D=&q%5Bcity_cont%5D=&q%5Bschool_cont%5D=&q%5Bmajor_cont%5D=&commit=Search">Search Profile</a></li>
+        <li><a href="/school_list">Categories<%= image_tag('/assets/new.gif')%></a></li>
+        <!-- <li><a href="/how-to-use/kr">Contact</a></li> -->
+        <li><a class="dropdown-button" href="#!" data-activates="dropdown_full_talk" >Tips&Talk!<i class="material-icons right">arrow_drop_down</i></a></li>
+
+        <li><a class="dropdown-button" href="#!" data-activates="dropdown_full_nav">My Menu<i class="material-icons right">arrow_drop_down</i></a></li>
+        <li>
+          <a href="/conversations"><i class="fa fa-envelope-o" aria-hidden="true"><%=unread_messages_count%></i> Messages</a>
+
+        </li>
+        <ul id="dropdown_full_nav" class="dropdown-content">
+          <li><%= link_to "My Profile", user_path(current_user) %></li>
+          <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
+           <li><a href="/sent">Requests Sent</a></li>
+          <li><a href="/received">Requests Received</a></li>
+          <li><%= link_to "Log Out", destroy_user_session_path, method: :get %></li>
+        </ul>
+        <% end %>
+
+      </ul>
+
+      <ul class="side-nav" id="mobile-demo">
+        <% if(!user_signed_in?) %>
+
+        <li> <%= link_to "Log In", new_user_session_path %> </li>
+        <li> <%= link_to "Sign Up", new_user_registration_path %> </li>
+        <% else %>
+        <li><%= link_to "My Profile", user_path(current_user) %></li>
+        <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
+         <li><a href="/sent">Requests Sent</a></li>
+        <li><a href="/received">Requests Received</a></li>
+        <!-- <li role="separator" class="nav-divider"></li> -->
+
+        <li><a class="dropdown-button" href="#!" data-activates="dropdown_mobile">Tips&talk<%= image_tag('/assets/new.gif')%><i class="material-icons right">arrow_drop_down</i></a></li>
+        <ul id="dropdown_mobile" class="dropdown-content">
+          <li><a href="/boards/1">Seoul<%= image_tag('/assets/new.gif')%></a></li>
+          <li><a href="/boards/2">Japan<%= image_tag('/assets/new.gif')%></a></li>
+
+          <li><a href="/boards/3">Europe<%= image_tag('/assets/new.gif')%></a></li>
+
+          <li><a href="/boards/4">USA<%= image_tag('/assets/new.gif')%></a></li>
+        </ul>
+        <li><%= link_to "Log Out", destroy_user_session_path, method: :get %></li>
+
+
+        <% end %>
+      </ul>
+
+    </div>
+
+  </div>
+</nav>
+
+    <!-- <%= image_tag('/assets/tweedlelong.png')%> -->
+	<!-- <div class="">
+        <ul class="" >
+        <% if user_signed_in? %>
+            <% else %>
+            <% end %>
+      </ul>
+	</div> --><!-- /.nav-collapse -->

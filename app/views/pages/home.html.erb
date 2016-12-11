@@ -1,0 +1,343 @@
+
+<%= render 'shared/topsenpai' %>
+
+<div class="row">
+
+  <div class="col s12 m12 l3" style="padding-right:0;">
+
+    <body>
+
+    <div class="container_post">
+    <div class="panel panel-default">
+        <div class="panel-body">
+
+          <div class="row col-sm-12 home-posts-container ">
+            <div class="row" style="text-align:center;margin-top:10px;margin-bottom:2rem;">
+              <h class="" style="color:black;font-size:24px;">Recent Posts</h>
+            </div>
+
+            <main class="flex-center">
+             <div class="row">
+              <% @posts.each do |post| %>
+              <div class="col-sm-12">
+                <div class="thread">
+                  <% if post.photo.present? %>
+
+                  <!-- <div class="post_thumbnail2">
+                    <%= link_to image_tag(post.photo.url(:medium)), [@board, post] %>
+                  </div> -->
+                  <%= link_to [@board, post] do %>
+
+                  <div class="post_overview">
+                    <h2>
+
+                      <%= truncate(post.title, length: 8) %>
+                      (<%= post.comments.count %>)
+                      <% if post.created_at > Time.now.beginning_of_day %>
+                      <%= image_tag('/assets/new.gif')%>
+                      <% else %>
+                      <%= image_tag('/assets/new.gif')%>
+
+                      <% end %>
+
+
+                    </h2>
+                  </div>
+                  <p class="author" >
+                    <strong>
+
+                    </strong>
+
+                    <%= post.created_at.strftime("%b %d") %>
+                  </p>
+                  <% end %>
+
+                  <% else %>
+
+                  <%= link_to [@board, post] do %>
+
+                  <div class="post_overview2">
+                    <h2>
+
+
+                      <%= truncate(post.title, length: 8) %>
+                      (<%= post.comments.count %>)
+                      <% if post.created_at > Time.now.beginning_of_day %>
+                      <%= image_tag('/assets/new.gif')%>
+                      <% else %>
+                      <%= image_tag('/assets/new.gif')%>
+
+                      <% end %>
+
+                    </h2>
+                  </div>
+                  <p class="author" >
+                    <strong>
+
+                    </strong>
+
+                    <%= post.created_at.strftime("%b %d") %>
+                  </p>
+
+                  <% end %>
+
+                  <% end %>
+                </div>
+              </div>
+
+
+              <% end %>
+            </div>
+
+
+          </main>
+
+        </div>
+
+
+
+      </div>
+
+    </div>
+    </div>
+
+    <br><br>
+    <br>
+    <br>
+    </body>
+
+  </div>       <!-- col-md-9 -->
+
+  <div class="col s12 m12 l9" style="padding-left:0;">
+    <div class="portrait_container">
+      <% @arrUsers.each do |user| %>
+          <% if user.uid? || user.avatar? %>
+            <% end %>
+            <% user.revisers.each do |reviser| %>
+              <% if reviser.active == true %>
+              <% end %>
+            <% end %>
+            <% if user.status != "no"%>
+            <% if user.state == "mentor" %>
+
+                <%= link_to new_message_path(to: user.id) do %>
+                <% end %>
+
+                <%= link_to user_path(user) do %>
+
+                <div class="user-layout">
+                  <%= render 'userPortrait', user: user %>
+                </div>
+                <% end %>
+                <% end %>
+            <% end %>
+
+
+
+
+      <% end %>
+    </div>
+  </div>        <!-- col-md-3 -->
+
+
+</div>        <!-- row -->
+
+
+
+<br>
+<br>
+
+<div class="steps">
+  <div id="step-note">
+    How to Use
+  </div>
+  <div class="row">
+          <div class="col s12 m12 l4">
+
+            <div id="step" class="right">
+              <div class="step_img">
+                <%= image_tag('/assets/profile.png', :style => "width:60%;max-width:60%;padding-top:3rem;")%>
+
+              </div>
+
+              <div class="step_overview">
+                <h2>
+
+                </h2>
+                <h2>
+                  STEP 1: Search
+
+                </h2>
+                <h3>
+                  <!-- 자신이 희망하는 학교의 선배님을 찾아 직접 연락하세요! -->
+                  Specify school and Search for mentor!
+
+                </h3>
+              </div>
+
+            </div>
+
+
+          </div>
+          <div class="col s12 m12 l4">
+
+            <div id="step">
+              <div class="step_img">
+                <%= image_tag('/assets/sendfile.png', :style => "width:45%;max-width:45%;padding-top:5rem;")%>
+
+              </div>
+
+              <div class="step_overview">
+                <h2>
+
+                </h2>
+                <h2>
+                  STEP 2: Send
+
+                </h2>
+                <h3>
+                  Send Essay or Application to Mentor and make an online appointment
+                  <!-- 입학 에세이, 대학원의 경우 State of Purpose를 멘토에게 이메일로 보내시고
+                  상담시간을 예약하세요! -->
+
+                </h3>
+              </div>
+
+            </div>
+
+
+          </div>
+          <div class="col s12 m12 l4">
+
+            <div id="step" class="left">
+              <div class="step_img" style="background-size:100%;">
+                <%= image_tag('/assets/skype.png', :style => "width:90%;max-width:90%;")%>
+
+
+
+              </div>
+
+              <div class="step_overview">
+                <h2>
+
+                </h2>
+                <h2>
+                  STEP 3: Get Consulting
+
+                </h2>
+                <h3>
+                  Using <strong><u><i>Skype or Google Hangout</i></u></strong>, Consult with the mentor about their essay and school life. <br><strong><i><u>or Get a Coffee in Real Life!</u></i></strong>
+                  <!-- 선배님과 "스카입","구글 행아웃" 아이디를 교환하시고, 실시간으로 상담을 받으세요! -->
+
+
+
+
+                </h3>
+              </div>
+
+            </div>
+
+
+          </div>
+
+  </div>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+
+<div class="features">
+  <div id="note">
+    Features Of Service
+  </div>
+  <div class="row">
+          <div class="col s4 m4 l4">
+
+            <div id="feature" style="float:right;">
+              <div class="feature_img">
+                <%= image_tag('/assets/talk.png', :style => "width:80%;max-width:80%;padding-top:3.5rem;")%>
+
+              </div>
+
+              <div class="feature_overview">
+                <h2>
+
+                </h2>
+                <h2>
+                  Real-Time <br>
+                  Interaction
+
+                </h2>
+                <h3>
+                  Our Service aims to create real-time interactions between users
+                  <!-- 유학 선배들과의 실시간 소통을 목표로 합니다. -->
+
+                </h3>
+              </div>
+
+            </div>
+
+
+          </div>
+          <div class="col s4 m4 l4">
+
+            <div id="feature">
+              <div class="feature_img">
+                <%= image_tag('/assets/paypal.png', :style => "width:65%;max-width:65%;padding-top:2rem;")%>
+
+              </div>
+
+              <div class="feature_overview">
+                <h2>
+
+                </h2>
+                <h2>
+                  Secured Payment
+
+                </h2>
+                <h3>
+                  Our Service uses Paypal to make international money transaction secured
+                  <!-- 페이팔 결제를 사용하기 때문에 안전합니다. -->
+
+                </h3>
+              </div>
+
+            </div>
+
+
+          </div>
+          <div class="col s4 m4 l4">
+
+            <div id="feature" style="float:left;">
+              <div class="feature_img" style="background-size:100%;">
+                <%= image_tag('/assets/team.png', :style => "width:40%;max-width:40%;padding-top:4.5rem;")%>
+
+
+
+              </div>
+
+              <div class="feature_overview">
+                <h2>
+
+                </h2>
+                <h2>
+                  Community
+
+                </h2>
+                <h3>
+                  Our Service provides community platform for users to meet other international students around the globe
+                  <!-- 커뮤니티 형성을 통해 필요한 정보를 공유하고자 합니다. -->
+
+                </h3>
+              </div>
+
+            </div>
+
+
+          </div>
+
+  </div>
+</div>
+<br><br>

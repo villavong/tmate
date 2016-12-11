@@ -40,8 +40,6 @@ GEM
       tzinfo (~> 1.1)
     ambry (1.0.0)
     arel (7.1.4)
-    autoprefixer-rails (6.5.3.1)
-      execjs
     aws-sdk (2.6.34)
       aws-sdk-resources (= 2.6.34)
     aws-sdk-core (2.6.34)
@@ -51,9 +49,6 @@ GEM
       aws-sdk-core (= 2.6.34)
     aws-sigv4 (1.0.0)
     bcrypt (3.1.11)
-    bootstrap-sass (3.3.7)
-      autoprefixer-rails (>= 5.2.1)
-      sass (>= 3.3.4)
     builder (3.2.2)
     byebug (9.0.6)
     cancancan (1.15.0)
@@ -148,6 +143,8 @@ GEM
     mailboxer (0.14.0)
       carrierwave (>= 0.5.8)
       rails (>= 4.2.0)
+    materialize-sass (0.97.8)
+      sass (~> 3.3)
     merit (2.4.0)
       ambry (~> 1.0.0)
     method_source (0.8.2)
@@ -326,7 +323,6 @@ PLATFORMS
 
 DEPENDENCIES
   aws-sdk
-  bootstrap-sass (~> 3.3.6)
   byebug
   cancancan
   ckeditor
@@ -347,6 +343,7 @@ DEPENDENCIES
   language_list (~> 1.1)
   listen (~> 3.0.5)
   mailboxer
+  materialize-sass
   merit
   mini_exiftool_vendored
   omniauth

@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161210175130) do
+ActiveRecord::Schema.define(version: 20161211165248) do
+
+  create_table "boards", force: :cascade do |t|
+    t.string   "title"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_boards_on_user_id"
+  end
 
   create_table "ckeditor_assets", force: :cascade do |t|
     t.string   "data_file_name",               null: false
@@ -26,6 +34,35 @@ ActiveRecord::Schema.define(version: 20161210175130) do
     t.datetime "updated_at",                   null: false
     t.index ["assetable_type", "assetable_id"], name: "idx_ckeditor_assetable"
     t.index ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type"
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.text     "comment"
+    t.integer  "user_id"
+    t.integer  "post_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "board_id"
+    t.index ["board_id"], name: "index_comments_on_board_id"
+    t.index ["post_id"], name: "index_comments_on_post_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "educations", force: :cascade do |t|
+    t.string   "education"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_educations_on_user_id"
+  end
+
+  create_table "languages", force: :cascade do |t|
+    t.string   "name"
+    t.string   "language"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_languages_on_user_id"
   end
 
   create_table "mailboxer_conversation_opt_outs", force: :cascade do |t|
@@ -91,7 +128,62 @@ ActiveRecord::Schema.define(version: 20161210175130) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.integer  "board_id"
+    t.string   "content"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
+    t.index ["board_id"], name: "index_posts_on_board_id"
     t.index ["user_id"], name: "index_posts_on_user_id"
+  end
+
+  create_table "reservations", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "reviser_id"
+    t.text     "document"
+    t.text     "rubric"
+    t.date     "due_date"
+    t.integer  "pages"
+    t.integer  "price"
+    t.integer  "total"
+    t.boolean  "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["reviser_id"], name: "index_reservations_on_reviser_id"
+    t.index ["user_id"], name: "index_reservations_on_user_id"
+  end
+
+  create_table "revisers", force: :cascade do |t|
+    t.integer  "user_id"
+    t.text     "description"
+    t.integer  "max_pages"
+    t.integer  "price_per"
+    t.boolean  "active"
+    t.string   "essay_type"
+    t.string   "average_time"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.string   "paypal"
+    t.index ["user_id"], name: "index_revisers_on_user_id"
+  end
+
+  create_table "scholarships", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "amount"
+    t.index ["user_id"], name: "index_scholarships_on_user_id"
+  end
+
+  create_table "specialties", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "user_id"
+    t.string   "specialty"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_specialties_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -111,8 +203,36 @@ ActiveRecord::Schema.define(version: 20161210175130) do
     t.string   "profile_img_content_type"
     t.integer  "profile_img_file_size"
     t.datetime "profile_img_updated_at"
+    t.string   "fullname"
+    t.string   "username"
+    t.string   "schoolemail"
+    t.string   "country"
+    t.string   "school"
+    t.string   "major"
+    t.string   "provider"
+    t.string   "uid"
+    t.text     "description"
+    t.string   "city"
+    t.text     "school_description"
+    t.string   "occupation"
+    t.string   "company_name"
+    t.text     "occupation_details"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
+    t.string   "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string   "status"
+    t.string   "institute"
+    t.string   "contact"
+    t.boolean  "access"
+    t.string   "state"
+    t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["username"], name: "index_users_on_username", unique: true
   end
 
 end

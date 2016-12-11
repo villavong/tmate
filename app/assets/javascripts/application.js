@@ -15,6 +15,7 @@
 //= require jquery-ui
 //= require autocomplete-rails
 //= require turbolinks
+//= require materialize-sprockets
 //= require ckeditor/init
 //= require cocoon
 //= require toastr

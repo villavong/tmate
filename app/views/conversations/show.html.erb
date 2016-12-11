@@ -8,7 +8,7 @@
 
 <% end %>
 <br>
-<div class="container3">
+<div class="container3" style="margin-bottom:5rem;">
 
 
   <p style="font-size: 3rem;color: #fff;font-weight: 700;">Chatting With
@@ -41,8 +41,8 @@
 
             <%= text_area_tag 'body', nil, cols: 3, class: 'form-control', placeholder: 'Type something...', required: true %>
           </div>
-          <%= submit_tag "Send Message", class: 'btn btn-primary' %>
-          <a href="/conversations" class="btn btn-primary">Go Back</a>
+          <%= submit_tag "Send Message", class: 'waves-effect waves-light btn' %>
+          <a href="/conversations" class="waves-effect waves-light btn">Go Back</a>
 
         <% end %>
 

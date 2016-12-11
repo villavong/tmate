@@ -1,19 +1,108 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @post.title %>
-</p>
 
-<p>
-  <strong>Body:</strong>
-  <%= @post.body %>
+      <div id="posts_content">
 
-</p>
-<p>
-  <!-- <%= image_tag @post.image.url %> -->
-  <%= image_tag @post.image.url(:medium) %>
-  <%= image_tag @post.image.url(:thumb) %>
-</p>
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+        <div id="title">
+          Title: <%= @post.title %>
+          <h5>
+          <%= link_to @post.user do %>
+
+            <% if @post.user.avatar? %>
+              <%= image_tag @post.user.avatar.url(:medium), :id => "image-tag", class: "portrait" %>
+            <% else %>
+              <% if @post.user.uid? %>
+              <%= image_tag "http://graph.facebook.com/#{user.uid}/picture?type=large" %>
+              <% end %>
+            <% end %>
+          <% end %>
+
+          <%= link_to @post.user.cut_email, @post.user %>
+        </h5>
+        </div>
+        <% if @post.photo? %>
+        <%= image_tag @post.photo.url(:medium) %>
+        <% end %>
+
+
+        <div id="content">
+          <br>
+
+
+            <!-- <%= markdownify @post.content %> -->
+            <%= raw @post.content %>
+
+        </div>
+
+
+        <div id="comments">
+          <!-- <h2 style="font-size:1.5rem;">
+
+            Comments
+          </h2> -->
+              <%= render @post.comments %>
+              <h3 style="font-size:1.5rem;">Reply to thread</h3>
+              <%= render "comments/form" %>
+        </div>
+
+
+        <hr/>
+        <div class="edit cf">                  <!-- blooming-shelf-56863.herokuapp.com -->
+          <%= link_to "Back to List", "/boards/#{@post.board_id}", class: "waves-effect waves-light btn", style: "margin: .5rem;" %>
+          <%= link_to "New Post", "/boards/#{@post.board_id}/posts/new", class: "waves-effect waves-light btn", style: "margin: .5rem;" %>
+
+          <% if current_user && @post.user == current_user %>
+
+            <%= button_to "Delete Post", post_path(@post), method: :delete, data: { confirm: "Are you sure you want to do this?" }, class: "waves-effect waves-light btn right", style: "margin: .5rem;" %>
+
+            <%= link_to "Edit Post", edit_post_path(@post), class: "waves-effect waves-light btn", style: "margin: .5rem;" %>
+
+
+          <% end %>
+        </div>
+
+
+            <div id="below_post" class="cf">
+                <h2>
+                  Other Posts
+                </h2>
+
+                <ul class="cf" >
+                  <% @posts.each do |post| %>
+                    <li class="cf" >
+
+                      <div class="post_number">
+                        <%= link_to [@board, post] do %>
+
+                        <h1>
+                        <%= @posts.where(["created_at < ?", post.created_at]).count + 1%>.
+                        </h1>
+                        <h1>
+                          <% if request.url == "http://www.tweedlemate.com/boards/#{post.board_id}/posts/#{post.id}" || request.url == "http://www.tweedlemate.com/boards/#{post.board_id}/posts/#{post.id}"%>
+
+                          Now
+                        </h1>
+                          <% end %>
+
+
+                      </div>
+
+                      <div class="post_overview">
+                        <h2>
+                          <%= post.created_at.strftime("%b %d, %Y") %> :
+
+                          <%= post.title %>
+
+                        </h2>
+                      </div>
+                      <% end %>
+
+                    </li>
+                  <% end %>
+                </ul>
+            </div>
+
+            <div class="container"  style="display: inline-block;text-align: center;">
+            <%= will_paginate @posts, previous_label: "Previous", next_label: "Next" %>
+
+            </div>
+        </div>

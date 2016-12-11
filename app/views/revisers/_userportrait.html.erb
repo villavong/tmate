@@ -1,0 +1,48 @@
+<div class="reviser-posts-wrapper">
+  <div class="post">
+    <div id="contain-pic">
+      <div class="thumbnail-reviser">
+       <% if @reviser.user.uid? %>
+       <%= image_tag "http://graph.facebook.com/#{@reviser.user.uid}/picture?type=large", :id => "image-tag", class: "portrait" %>
+       <% else %>
+       <%= image_tag @reviser.user.avatar.url(:medium), :id => "image-tag", class: "portrait" %>
+       <% end %>
+     </div>
+   </div>
+
+   <!-- Reviews stars overall-->
+
+
+
+  <div class="row">
+    <div class="user-name">
+     <%= truncate( @reviser.user.fullname, length:20) %>
+   </div>
+ </div>
+ <div class="post-bottom">
+  <div class="caption">
+
+    <div class="row">
+      <div class="comment-form col-sm-12">
+        Univ: <%= truncate( @reviser.user.school, length: 25) %>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="comment-form col-sm-12">
+      Major: <%= truncate( @reviser.user.major, length: 24) %>
+      </div>
+
+
+    </div>
+
+
+  </div>
+  <div class="comments" >
+
+  </div>
+
+</div>
+
+</div>
+</div>

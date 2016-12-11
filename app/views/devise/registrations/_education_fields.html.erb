@@ -1,0 +1,21 @@
+<div class="form-inline clearfix" style="margin-left:1rem;">
+  <div class="nested-fields">
+    <div class="row" style="margin-bottom: 0;">
+      <div class="col l9" style="padding-top:1.2rem;">
+        Added!
+      </div>
+      <div class="col l9" style="padding-right:0;">
+
+      <%= f.text_field :education, :style => "width:100%;", :class => 'form-control',
+      :placeholder => "ex: Mountlake High School '05-'08//Google Intern 2months", autofocus: false  %>
+      </div>
+        <div class="col l2" style="padding-right:0;">
+
+        <%= link_to_remove_association "Remove", f, class: "waves-effect waves-light btn left" %>
+        </div>
+
+
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,267 @@
+<div class="white_background">
+  <div class="container_index">
+        <div class="container-body">
+
+          <div class="row">
+
+              <%= search_form_for @search do |f| %>
+
+                <div class="form-inline">
+
+                  <div class="form-row">
+
+                      <div class="col-md-12" style="text-align:center;margin-bottom:2rem;font-size:2.2rem;font-weight:700;">
+                        Search Profile
+
+                      </div>
+
+                  </div>
+                  <div class="form-row">
+
+                    <div class="input-field col s12 m12 l4">
+                      <div class="form-group">
+                        <%= f.label :school_cont, "School", style: "font-weight:700;" %> <br>
+                        <% options = options_for_select(User.yes.order(:school).uniq.pluck(:school)) %>
+                        <%= f.select :school_cont, options, {include_blank: "Select University"}, style: "width: 300px;" %>
+
+                      </div>
+                    </div>
+
+                    <div class="input-field col s12 m12 l4">
+                      <div class="form-group">
+                        <%= f.label :school_cont, "School", style: "font-weight:700;" %> <br>
+
+                        <%= f.autocomplete_field :school_cont, autocomplete_user_school_suggestions_path, id: "auto"  %>
+
+
+
+                      </div>
+
+                    </div>
+
+                    <div class="input-field col s12 m12 l4">
+                      <div class="form-group">
+                        <%= f.label :major_cont, "Major" %> <br>
+                        <%= f.autocomplete_field :major_cont, autocomplete_user_major_suggestions_path, class: "form-control" %>
+
+                      </div>
+                    </div>
+                    <br>
+                    <br>
+
+
+
+
+                  </div>
+
+
+                </div>
+
+
+
+                <div class="row">
+                  <div class="col-3">
+
+                  </div>
+                  <div class="col-9 pull-right">
+                  <br>  *You may leave blanks for any column
+
+                  </div>
+
+                </div>
+                <!-- <div id="submit">
+                  <%= link_to "All Profiles", "/users?utf8=%E2%9C%93&q%5Bcountry_cont%5D=&q%5Bcity_cont%5D=&q%5Bschool_cont%5D=&q%5Bmajor_cont%5D=&commit=Search", class: "waves-effect waves-light btn right" %>
+
+                </div> -->
+                <div id="submit" >
+                  <%= f.submit "Search", class: "waves-effect waves-light btn right", style: "margin:0 1rem;" %>
+
+                </div>
+              <% end %>
+
+
+
+          </div>
+
+        </div>
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+</div>
+
+<!-- /    ^^^-________________________/? -->
+
+<div class="index_page" style="width:25%;margin:0 auto;">
+  <%= will_paginate @results, previous_label: "Previous", next_label: "Next" %>
+
+</div>
+
+<!--
+<script type="text/javascript">
+$(function() {
+    $('input[type=checkbox]').change(function(){
+      $.get($('#user_search').attr('action'),
+    $('#user_search').serialize(),null, 'script');
+    return false;
+  )};
+  $('#user_search').submit(function() {
+    $.get(this.action, $(this).serialize(), null, 'script');
+    return false;
+  });
+});
+
+</script> -->
+<div class="order" style="font-size:2rem;color:#fff;font-wight:700;width:80%;margin: 0 auto;clear: both;text-align: right;">
+  Order By Last Sign In
+</div>
+<div class="row">
+
+  <div class="col s12 m12 l3" style="padding-right:0;">
+
+    <body>
+
+    <div class="container_post">
+    <div class="panel panel-default">
+        <div class="panel-body">
+
+          <div class="row col-sm-12 home-posts-container ">
+            <div class="row" style="text-align:center;margin-top:10px;margin-bottom:2rem;">
+              <h class="" style="color:black;font-size:24px;">Recent Posts</h>
+            </div>
+
+            <main class="flex-center">
+             <div class="row">
+              <% @posts.each do |post| %>
+              <div class="col-sm-12">
+                <div class="thread">
+                  <% if post.photo.present? %>
+
+                  <!-- <div class="post_thumbnail2">
+                    <%= link_to image_tag(post.photo.url(:medium)), [@board, post] %>
+                  </div> -->
+                  <%= link_to [@board, post] do %>
+
+                  <div class="post_overview">
+                    <h2>
+
+                      <%= truncate(post.title, length: 8) %>
+                      (<%= post.comments.count %>)
+                      <% if post.created_at > Time.now.beginning_of_day %>
+                      <%= image_tag('/assets/new.gif')%>
+                      <% else %>
+                      <%= image_tag('/assets/new.gif')%>
+
+                      <% end %>
+
+
+                    </h2>
+                  </div>
+                  <p class="author" >
+                    <strong>
+
+                    </strong>
+
+                    <%= post.created_at.strftime("%b %d") %>
+                  </p>
+                  <% end %>
+
+                  <% else %>
+
+                  <%= link_to [@board, post] do %>
+
+                  <div class="post_overview2">
+                    <h2>
+
+
+                      <%= truncate(post.title, length: 8) %>
+                      (<%= post.comments.count %>)
+                      <% if post.created_at > Time.now.beginning_of_day %>
+                      <%= image_tag('/assets/new.gif')%>
+                      <% else %>
+                      <%= image_tag('/assets/new.gif')%>
+
+                      <% end %>
+
+                    </h2>
+                  </div>
+                  <p class="author" >
+                    <strong>
+
+                    </strong>
+
+                    <%= post.created_at.strftime("%b %d") %>
+                  </p>
+
+                  <% end %>
+
+                  <% end %>
+                </div>
+              </div>
+
+
+              <% end %>
+            </div>
+
+
+          </main>
+
+        </div>
+
+
+
+      </div>
+
+    </div>
+    </div>
+
+    <br><br>
+    <br>
+    <br>
+    </body>
+
+  </div>       <!-- col-md-9 -->
+
+  <div class="col s12 m12 l9" style="padding-left:0;">
+    <div class="portrait_container">
+      <% @arrUsers.each do |user| %>
+          <% if user.uid? || user.avatar? %>
+            <% end %>
+            <% user.revisers.each do |reviser| %>
+              <% if reviser.active == true %>
+              <% end %>
+            <% end %>
+            <% if user.status != "no"%>
+            <% if user.state == "mentor" %>
+
+                <%= link_to new_message_path(to: user.id) do %>
+                <% end %>
+
+                <%= link_to user_path(user) do %>
+
+                <div class="user-layout">
+                  <%= render 'userPortrait', user: user %>
+                </div>
+                <% end %>
+                <% end %>
+            <% end %>
+
+
+
+
+      <% end %>
+    </div>
+  </div>        <!-- col-md-3 -->
+
+
+</div>        <!-- row -->
