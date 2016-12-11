@@ -29,7 +29,7 @@
 
                     <div class=" col s12 m12 l4">
                       <div class="form-group">
-                        <%= f.label :school_cont, "School"%> 
+                        <%= f.label :school_cont, "School"%>
 
                         <%= f.autocomplete_field :school_cont, autocomplete_user_school_suggestions_path, id: "auto"  %>
 
@@ -158,9 +158,9 @@ $(function() {
                       <%= truncate(post.title, length: 8) %>
                       (<%= post.comments.count %>)
                       <% if post.created_at > Time.now.beginning_of_day %>
-                      <%= image_tag('/assets/new.gif')%>
+                      <%= image_tag('new.gif')%>
                       <% else %>
-                      <%= image_tag('/assets/new.gif')%>
+                      <%= image_tag('new.gif')%>
 
                       <% end %>
 
