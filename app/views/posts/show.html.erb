@@ -7,8 +7,8 @@
           <h5>
           <%= link_to @post.user do %>
 
-            <% if @post.user.avatar? %>
-              <%= image_tag @post.user.avatar.url(:medium), :id => "image-tag", class: "portrait" %>
+            <% if @post.user.profile_img? %>
+              <%= image_tag @post.user.profile_img.url(:medium), :id => "image-tag", class: "portrait" %>
             <% else %>
               <% if @post.user.uid? %>
               <%= image_tag "http://graph.facebook.com/#{user.uid}/picture?type=large" %>
