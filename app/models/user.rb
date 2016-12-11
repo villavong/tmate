@@ -56,8 +56,8 @@ class User < ApplicationRecord
 
 
 
-  has_attached_file :profile_imgar, :styles => { :medium => "300x300>", :thumb => "100x100>"}, :default_url => "/images/:style/missing1.png"
-  validates_attachment_content_type :profile_imgar, :content_type => /\Aimage\/.*\Z/
+  has_attached_file :profile_img, :styles => { :medium => "300x300>", :thumb => "100x100>"}, :default_url => "/images/:style/missing1.png"
+  validates_attachment_content_type :profile_img, :content_type => /\Aimage\/.*\Z/
 
 
 
