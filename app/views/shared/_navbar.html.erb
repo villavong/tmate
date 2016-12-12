@@ -62,13 +62,28 @@
 
         <li> <%= link_to "Log In", new_user_session_path %> </li>
         <li> <%= link_to "Sign Up", new_user_registration_path %> </li>
+        <li><a href="/users?utf8=%E2%9C%93&q%5Bcountry_cont%5D=&q%5Bcity_cont%5D=&q%5Bschool_cont%5D=&q%5Bmajor_cont%5D=&commit=Search" style="color:#fff;">Search Profile</a></li>
+        <li><a href="/school_list" style="color:#fff;">Categories<%= image_tag('new.gif')%></a></li>
+        
+        <li><a class="dropdown-button" href="#!" data-activates="dropdown_mobile">Tips&talk<%= image_tag('new.gif')%><i class="material-icons right" >arrow_drop_down</i></a></li>
+        <ul id="dropdown_mobile" class="dropdown-content">
+          <li><a href="/boards/1">Seoul<%= image_tag('new.gif')%></a></li>
+          <li><a href="/boards/2">Japan<%= image_tag('new.gif')%></a></li>
+
+          <li><a href="/boards/3">Europe<%= image_tag('new.gif')%></a></li>
+
+          <li><a href="/boards/4">USA<%= image_tag('new.gif')%></a></li>
+        </ul>
         <% else %>
         <li><%= link_to "My Profile", user_path(current_user) %></li>
         <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
          <li><a href="/sent">Requests Sent</a></li>
         <li><a href="/received">Requests Received</a></li>
         <!-- <li role="separator" class="nav-divider"></li> -->
+        <li>
+          <a href="/conversations" style="color:#fff;"><i class="fa fa-envelope-o" aria-hidden="true"><%=unread_messages_count%></i> Messages</a>
 
+        </li>
         <li><a class="dropdown-button" href="#!" data-activates="dropdown_mobile">Tips&talk<%= image_tag('new.gif')%><i class="material-icons right" >arrow_drop_down</i></a></li>
         <ul id="dropdown_mobile" class="dropdown-content">
           <li><a href="/boards/1">Seoul<%= image_tag('new.gif')%></a></li>
@@ -87,6 +102,8 @@
     </div>
 
   </div>
+</nav>
+
 
     <!-- <%= image_tag('/tweedlelong.png')%> -->
 	<!-- <div class="">
