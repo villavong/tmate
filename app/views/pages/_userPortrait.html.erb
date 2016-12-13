@@ -1,4 +1,4 @@
-<div class="col s12 m12 l4 posts-wrapper">
+<div class="col s6 m6 l4 posts-wrapper">
   <div class="post hoverable">
 
 
@@ -24,7 +24,19 @@
                 <%= truncate( user.fullname, length:20) %>
               </div>
              </div>
+             <div class="comment-form col-sm-12" >
+               학교:
+               <div class="user_attribute" style="color: #a94442;font-weight:700;">
+                 <b><%= truncate(user.school, length: 25) %></b>
+               </div>
 
+             </div>
+             <div class="comment-form col-sm-12" >
+               전공:
+               <div class="user_attribute" style="color: #000;">
+                 <%= truncate( user.major, length:25) %>
+               </div>
+              </div>
              <div class="comment-form col-sm-12" >
                <div class="user_attribute" style="color:#fed8aa;">
                  <b><i>"<%= truncate(user.description, length: 20) %>"</i></b>    <br>
@@ -38,19 +50,7 @@
                  <%= truncate( user.country, length:15) %>
                </div>
               </div> -->
-             <div class="comment-form col-sm-12" >
-               학교:
-               <div class="user_attribute" style="color: #a94442;font-weight:700;">
-                 <b><%= truncate(user.school, length: 25) %></b>
-               </div>
 
-             </div>
-             <div class="comment-form col-sm-12" >
-               전공:
-               <div class="user_attribute">
-                 <%= truncate( user.major, length:25) %>
-               </div>
-              </div>
 
 
               <!-- <% if user.occupation != nil %>

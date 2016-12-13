@@ -130,7 +130,7 @@ a:hover
 	margin-top: 3rem;
 		#step-note {
 			text-align: center;
-			font-size: 3rem;
+			font-size: 2rem;
 			color: #fff;
 			font-weight: 500;
 		}
@@ -190,23 +190,24 @@ a:hover
 
 .features {
 	width: 100%;
-	min-height: 42rem;
+	min-height: 45rem;
 	background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
 	background-image: image-url("lib.jpg");
 	box-shadow: 2px 5px 12px 1px rgba(112,112,112,1);
 	padding-top: 1rem;
+  clear: both;
 
 		#note {
 			text-align: center;
-			font-size: 3rem;
+			font-size: 2rem;
 			color: #fff;
 			font-weight: 500;
 		}
 		#feature {
 		width: 55%;
-		max-height: 15rem;
+		// max-height: 15rem;
 		// max-height: 15rem;
 		margin: .5rem auto;
 	  border-radius: .35rem;
@@ -214,6 +215,7 @@ a:hover
 		-moz-box-shadow: 2px 2px 5px 1px rgba(112,112,112,1);
 		box-shadow: 2px 2px 5px 1px rgba(112,112,112,1);
 	  transition: width .1s ease;
+
 		.feature_img {
 			height: 15rem;
 			background-color: #fff;

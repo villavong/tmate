@@ -59,9 +59,9 @@
                       (<%= post.comments.count %>)
 
                       <% if post.created_at > Time.now.beginning_of_day %>
-                          <%= image_tag('/assets/new.gif')%>
+                          <%= image_tag('new.gif')%>
                       <% else %>
-                      <%= image_tag('/assets/new.gif')%>
+                      <%= image_tag('new.gif')%>
 
                       <% end %>
 
