@@ -20,7 +20,6 @@ Ckeditor.setup do |config|
   # Set to nil or [] (empty array) for all file types
   # By default: %w(doc docx xls odt ods pdf rar zip tar tar.gz swf)
   # config.attachment_file_types = %w(doc docx xls odt ods pdf rar zip tar tar.gz swf)
-  config.swf_file_size_limit = "10 MB"
   # Setup authorization to be run as a before filter
   # By default: there is no authorization.
   # config.authorize_with :cancan

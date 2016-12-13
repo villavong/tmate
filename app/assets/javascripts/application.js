@@ -22,9 +22,7 @@
 //= require_tree .
 $(document).ready(function() {
     $(".button-collapse").sideNav();
-    $(".dropdown-button").dropdown();
     $('select').material_select();
-    $('.modal').modal();
     $("#auto").autocomplete({
       source: '/suggestions/autocomplete_user_school'});
 });
