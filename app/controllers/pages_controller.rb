@@ -13,7 +13,7 @@ class PagesController < ApplicationController
 		# @arrUsers = @results.order("last_sign_in_at DESC").to_a.uniq
 		# @arrUsers =User.all.limit(4)
 
-		@arrUsers = @results.shuffle.to_a.uniq
+		@arrUsers = @results.shuffle.first(20).to_a.uniq
 
 
 		@posts = Post.all.order("created_at DESC")
@@ -30,8 +30,6 @@ class PagesController < ApplicationController
 
 		@schools = User.uniq.pluck(:school)
 		@languages = Language.order(:language).uniq.pluck(:language)
-
-
 		@users = User.all.limit(4)
 		@revisers = Reviser.all
 

@@ -36,7 +36,6 @@ class User < ApplicationRecord
 
 
   has_many :reservations, :dependent => :delete_all
-  has_many :reviews
   has_one :verification
 
   has_many :boards, :dependent => :delete_all

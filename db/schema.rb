@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161213053554) do
+ActiveRecord::Schema.define(version: 20161213055239) do
 
   create_table "boards", force: :cascade do |t|
     t.string   "title"
@@ -154,6 +154,17 @@ ActiveRecord::Schema.define(version: 20161213053554) do
     t.index ["user_id"], name: "index_reservations_on_user_id"
   end
 
+  create_table "reviews", force: :cascade do |t|
+    t.text     "comment"
+    t.integer  "star"
+    t.integer  "user_id"
+    t.integer  "reviser_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["reviser_id"], name: "index_reviews_on_reviser_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
+
   create_table "revisers", force: :cascade do |t|
     t.integer  "user_id"
     t.text     "description"
@@ -233,6 +244,13 @@ ActiveRecord::Schema.define(version: 20161213053554) do
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["username"], name: "index_users_on_username", unique: true
+  end
+
+  create_table "verifications", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "user_id"
+    t.index ["user_id"], name: "index_verifications_on_user_id"
   end
 
   create_table "works", force: :cascade do |t|
