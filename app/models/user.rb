@@ -20,13 +20,11 @@ class User < ApplicationRecord
   # scope :by_specialties -> specialty { where(:specialty => specialty)}
 
   has_many :educations
-  has_many :works
 
   has_many :languages
   has_many :specialties
   has_many :scholarships
   accepts_nested_attributes_for :educations, reject_if: proc { |attributes| attributes['education'].blank? }, allow_destroy: true
-  accepts_nested_attributes_for :works, reject_if: proc { |attributes| attributes['work'].blank? }, allow_destroy: true
 
   accepts_nested_attributes_for :scholarships, reject_if: proc { |attributes| attributes['name'].blank? }, allow_destroy: true
   accepts_nested_attributes_for :languages, reject_if: proc { |attributes| attributes['language'].blank? }, allow_destroy: true

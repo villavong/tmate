@@ -1,7 +1,7 @@
 class UsersController <ApplicationController
 before_action :authenticate_user!, except: [:index, :show]
 # before_action :authenticate_user!, except: [:index]
-before_action :check_mentor, only: [:show]
+# before_action :check_mentor, only: [:show]
 before_action :set_user, except: [:index, :show]
 	def index
 
@@ -69,16 +69,16 @@ end
 	end
 
 	private
-		def check_mentor
-			if User.find(params[:id]).state == "mentor" || current_user == User.find(params[:id])
-
-			else
-				respond_to do |format|
-		      format.html { redirect_to "/users?utf8=✓&q%5Bcountry_cont%5D=&q%5Bcity_cont%5D=&q%5Bschool_cont%5D=&q%5Bmajor_cont%5D=&commit=Search", notice: '멘티의 프로필은 비공개입니다 :)' }
-		      format.json { head :no_content }
-		    end
-			end
-		end
+		# def check_mentor
+		# 	if User.find(params[:id]).state == "mentor" || current_user == User.find(params[:id])
+		#
+		# 	else
+		# 		respond_to do |format|
+		#       format.html { redirect_to "/users?utf8=✓&q%5Bcountry_cont%5D=&q%5Bcity_cont%5D=&q%5Bschool_cont%5D=&q%5Bmajor_cont%5D=&commit=Search", notice: '멘티의 프로필은 비공개입니다 :)' }
+		#       format.json { head :no_content }
+		#     end
+		# 	end
+		# end
     def set_user
       @user = User.find(params[:id])
     end
