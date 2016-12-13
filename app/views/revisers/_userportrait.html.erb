@@ -5,7 +5,7 @@
        <% if @reviser.user.uid? %>
        <%= image_tag "http://graph.facebook.com/#{@reviser.user.uid}/picture?type=large", :id => "image-tag", class: "portrait" %>
        <% else %>
-       <%= image_tag @reviser.user.avatar.url(:medium), :id => "image-tag", class: "portrait" %>
+       <%= image_tag @reviser.user.profile_img.url(:medium), :id => "image-tag", class: "portrait" %>
        <% end %>
      </div>
    </div>
