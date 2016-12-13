@@ -1,5 +1,16 @@
 RailsAdmin.config do |config|
 
+  config.current_user_method(&:current_user)
+
+  config.authorize_with do
+    redirect_to main_app.root_path unless current_user.admin == true
+    warden.authenticate! scope: :user
+
+  end
+  config.model 'User' do
+    exclude_fields :confirmation_token
+  end
+
   ### Popular gems integration
 
   ## == Devise ==
