@@ -34,7 +34,9 @@
                     <div class=" col s12 m12 l4">
                       <div class="form-group">
                         <%= f.label :school_cont, "School", style: "font-weight:700;" %> <br>
-                        <% options = options_for_select(User.yes.order(:school).uniq.pluck(:school)) %>
+                        <!-- <% options = options_for_select(User.yes.order(:school).uniq.pluck(:school)) %> -->
+                        <% options = options_for_select(User.order(:school).uniq.pluck(:school)) %>
+
                         <%= f.select :school_cont, options, {include_blank: "Select University"}, style: "width: 300px;" %>
 
                       </div>

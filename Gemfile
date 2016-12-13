@@ -64,7 +64,6 @@ gem "cocoon"
 #Language
 gem 'language_list', '~> 1.1'
 #RANKS
-gem 'merit'
 
 # Messages
 gem 'mailboxer'
