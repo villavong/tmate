@@ -1148,7 +1148,7 @@ input[type="checkbox"]:checked:before {
     border-radius: .15rem;
     line-height: 20px;
     text-decoration: none;
-    background-color: #feb65e;
+    // background-color: #feb65e;
     font-weight: 700;
     font-size: 1rem;
     font-style: normal;
@@ -1173,7 +1173,7 @@ input[type="checkbox"]:checked:before {
     border-radius: .15rem;
     line-height: 20px;
     text-decoration: none;
-    background-color: lighten(#feb65e, 15%);
+    background-color: lighten(#e57373, 15%);
     font-weight: 700;
     font-size: 1rem;
     font-style: normal;

@@ -116,6 +116,7 @@
             <% end %>
             <% if user.status != "no"%>
             <% if user.state == "mentor" %>
+            <% end %>
 
                 <%= link_to new_message_path(to: user.id) do %>
                 <% end %>
@@ -126,7 +127,6 @@
                   <%= render 'userPortrait', user: user %>
                 </div>
                 <% end %>
-            <% end %>
 
             <% end %>
 

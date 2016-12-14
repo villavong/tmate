@@ -11,9 +11,9 @@ class PagesController < ApplicationController
 		@results = @search.result
 
 		# @arrUsers = @results.order("last_sign_in_at DESC").to_a.uniq
-		# @arrUsers =User.all.limit(4)
+		@arrUsers =User.all
 
-		@arrUsers = @results.shuffle.first(18).to_a.uniq
+		# @arrUsers = @results.shuffle.first(18).to_a.uniq
 
 
 		@posts = Post.all.order("created_at DESC")
