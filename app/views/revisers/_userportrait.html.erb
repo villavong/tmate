@@ -1,6 +1,6 @@
-<div class="reviser-posts-wrapper">
+<div class="reviser-posts-wrapper cf">
   <div class="post">
-    <div id="contain-pic">
+    <div id="contain-pic" style="width:250px;height:250px;">
       <div class="thumbnail-reviser">
        <% if @reviser.user.uid? %>
        <%= image_tag "http://graph.facebook.com/#{@reviser.user.uid}/picture?type=large", :id => "image-tag", class: "portrait" %>
@@ -20,7 +20,7 @@
    </div>
  </div>
  <div class="post-bottom">
-  <div class="caption">
+  <div class="caption cf">
 
     <div class="row">
       <div class="comment-form col-sm-12">
@@ -28,7 +28,7 @@
 
       </div>
     </div>
-    <div class="row">
+    <div class="row cf">
       <div class="comment-form col-sm-12">
       Major: <%= truncate( @reviser.user.major, length: 24) %>
       </div>
@@ -38,9 +38,7 @@
 
 
   </div>
-  <div class="comments" >
 
-  </div>
 
 </div>
 

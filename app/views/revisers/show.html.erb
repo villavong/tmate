@@ -1,42 +1,29 @@
 
 
-<div class="row">
-
-	<div class="col s12 m12 l3 offset-s6 text-center">
-			<%= render "userportrait" %>
-	</div>
-	<div class="col s12 m12 l9">
-			<div class="" style="margin:0 auto">
+<div class="cf" style="width:60%;margin:0 auto;">
+	<div class="row cf" style="width:100%;">
+		<h5 class="cf" style="font-size:1.4rem;text-align:center;">
 			Have you talked to the mentor already?  <br>
 			Please get in touch with the mentor first!! :) <br>
 			We take no Commission for now :)
-			</div>
-
-
-		</div>
+		</h5>
 
 	</div>
-</div>
-
-
-		<%= form_for([@reviser, @reviser.reservations.new]) do |f| %>
-		<br>
-		<div class="row text-center">
-
-
-
-			<div class="col s6 m6 l3">
-				<%= render 'reservations/form', f: f %>
-			</div>
-
-			<div class="col-sm-6 float-right">
-				<div class="row">
-					+ Paypal Transaction Fees(3.9%) <br>
-					<a href="https://www.paypal.com/webapps/mpp/paypal-fees">About Paypal Fees</a>
-				</div>
-
-			</div>
-
+	<div class="row" style="width:100%;">
+		<div class="" style="float:left;">
+				<%= render "userportrait" %>
 		</div>
-		<%= f.submit "Send Now", class: "waves-effect waves-light btn", style: "float:right;margin-top:20px;" %>
+		<%= form_for([@reviser, @reviser.reservations.new]) do |f| %>
+		<div class="col l10" style="">
+			<%= render 'reservations/form', f: f %>
+			<div class="cf" style="float:right;">
+				+ Paypal Transaction Fees(3.9%) <br>
+				<a href="https://www.paypal.com/webapps/mpp/paypal-fees">About Paypal Fees</a>
+			</div>
+		</div>
+		<%= f.submit "Send Through Paypal", class: "waves-effect waves-light btn", style: "float:right;margin-top:2rem;" %>
 		<% end %>
+	</div>
+
+
+</div>

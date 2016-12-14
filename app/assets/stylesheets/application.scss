@@ -2,7 +2,9 @@
 @import "materialize/components/color";
 $primary-color: color("blue-grey", "lighten-1") !default;
 $secondary-color: color("red", "lighten-2") !default;
-$navbar-font-color: #373738 !default;
+// $navbar-font-color: #00897b !default;
+$navbar-font-color: #e57373 !default;
+
 
 .ilike-blue-container {
   @extend .blue, .lighten-4;
@@ -198,9 +200,7 @@ padding-bottom: 20px;
 /*reservation table-------------------------------------------------------------------*/
 
 .reservation-table td{
-  width: 100%;
-  border: 1px solid #dce0e0;
-  padding:10px;
+  border: 1.5px solid #fff;
 }
 
 
@@ -212,6 +212,7 @@ padding-bottom: 20px;
 /*perfect image ratios 2 for smaller profile photos _----------------------------------*/
 
 #contain-pic-show {
+  padding-bottom: .7rem;
 
   }
   .language {
@@ -230,7 +231,7 @@ padding-bottom: 20px;
   img {
     display: block;
     margin: 0 auto;
-    width: 100%;
+    height: 100%;
   }
 }
 
@@ -259,6 +260,7 @@ padding-bottom: 20px;
   height: 100px;
   // float: left;
   overflow: hidden;
+  border-radius: .35rem;
 }
 .thumbnail-show #image-tag {
 
@@ -1141,19 +1143,21 @@ input[type="checkbox"]:checked:before {
 
   a, .previous_page, .next_page {
 
-    padding: 1rem 1.5rem;
-    margin: 0 .25rem;
+    padding: .5rem 1rem;
+    margin: .2rem .25rem;
     border-radius: .15rem;
     line-height: 20px;
     text-decoration: none;
     background-color: #feb65e;
     font-weight: 700;
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-style: normal;
-    color: #FFFFFF;
+    // color: #FFFFFF;
+    display: inline-block;
+    border: 1px solid #ddd;
     &:hover {
-      background: lighten(#feb65e, 15%);
-      color: #FFFFFF;
+      background: lighten(#b2dfdb, 15%);
+      color: #ddd;
 
     }
   }
@@ -1164,17 +1168,19 @@ input[type="checkbox"]:checked:before {
     }
   }
   .current {
-    padding: 1rem 1.5rem;
-    margin: 0 .25rem;
+    padding: .5rem 1rem;
+    margin: .2rem .25rem;
     border-radius: .15rem;
     line-height: 20px;
     text-decoration: none;
     background-color: lighten(#feb65e, 15%);
     font-weight: 700;
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-style: normal;
     color: #FFFFFF;
-    background: darken(#feb65e, 15%);
+    display: inline-block;
+    border-line: 1px
+    // background: darken(#feb65e, 15%);
   }
 }
 /*    ------------------------------------------------------------------*/

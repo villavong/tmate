@@ -4,28 +4,31 @@
       <div id="real-note">
         <!-- 실제 합격생에게 상담받으세요 <br> -->
 
-        <!-- Want to Help other students coming <br>to your school? <br><br> -->
+        Want to Help other students coming <br>to your school? <br><br>
           <!-- Want to study abroad?  <br>
           Ask students who's already there -->
+          <!-- Help students coming to your school! -->
 
-          Do you want real
+          <!-- Do you want real
           information
           <br>about your next school ?
           <br>
-          Talk to real students!
+          Talk to real students! -->
 
       </div>
     </div>
 
     <div class="col s12 m12 l12">
       <div id="real">
-        Language barrier, Reviewing Application, Finding an accomodation...  <br>
-
+        Language barrier, Reviewing Application Essay, Finding an accomodation...  <br>
+        Become a Mentor or Tutor <br>
+        to Help students    <br>
+        who are about to walk the same path.  <br>
         <!-- How to apply ? How to get in ? How to live there ? <br> -->
-        Get in touch with an actual accepted student   <br>
-        who has already walked the same path.  <br>
+        <!-- Get in touch with an actual accepted student   <br>
+        who has already walked the same path.  <br> -->
 
-        Schedule a consultation with a senior and get prepared  <br>
+        <!-- Schedule a consultation with a senior and get prepared  <br> -->
       </div>
     </div>
   </row>
@@ -45,8 +48,8 @@
 
                   <div class="form-row">
 
-                      <div class="col-md-12" style="text-align:center;margin-bottom:2rem;font-size:2.2rem;font-weight:700;">
-                        Search Profiles
+                      <div class="col-md-12" style="text-align:center;margin-bottom:2rem;font-size:1.5rem;font-weight:700;">
+                        Search Profile and Get Help
                         <br>
                       </div>
                   </div>
@@ -65,8 +68,8 @@
                     </div>
                     <div class="input-field col s12 m12 l4">
                       <div class="form-group">
-                        <%= f.label :school_cont, "School", style: "font-weight:700;" %> <br>
-                        <% options = options_for_select(User.yes.order(:school).uniq.pluck(:school)) %>
+                        <%= f.label :school_cont, "Select from List", style: "font-weight:700;" %> <br>
+                        <% options = options_for_select(User.order(:school).uniq.pluck(:school)) %>
                         <%= f.select :school_cont, options, {include_blank: "Select University"}, style: "width: 300px;" %>
 
                       </div>

@@ -85,7 +85,7 @@
 
           <div class="row">
             <div class="col s10">
-              <label style="margin-bottom:-20px;margin-top:.3rem;padding:.5rem 0;font-weight:700;">*이름 Full Name</label>
+              <label style="margin-bottom:-20px;margin-top:.3rem;padding:.5rem 0;font-weight:700;">*Full Name</label>
             </div>
 
             <div class="col s10">
@@ -135,7 +135,7 @@
 
           <div class="row">
             <div class="col s10">
-              <label style="margin-bottom:-20px;margin-top:.3rem;padding:.5rem 0;font-weight:700;">University 학교　学校<br>(*대학, 혹은 대학원 ) <br> (영어로 표기해주세요)　</label>
+              <label style="margin-bottom:-20px;margin-top:.3rem;padding:.5rem 0;font-weight:700;">*School</label>
             </div>
 
             <div class="">
@@ -146,7 +146,7 @@
 
           <div class="row">
             <div class="col s10">
-              <label style="margin-bottom:-20px;margin-top:.3rem;padding:.5rem 0;font-weight:700;">전공 Major　専攻</label>
+              <label style="margin-bottom:-20px;margin-top:.3rem;padding:.5rem 0;font-weight:700;">*Major</label>
             </div>
 
             <div class="">
@@ -169,7 +169,7 @@
           </div> -->
 
 
-          <div class="row" style="">
+          <!-- <div class="row" style="">
             <div class="">
               <label style="margin-bottom:-20px;margin-top:.3rem;padding:.5rem 0;font-weight:700;">멘토(선배) or 멘티(예비) </label>
             </div>
@@ -178,7 +178,7 @@
               <%= f.select :state, [["멘토(선배)", "mentor"],["멘티(예비)", "mentee"]], class: "form-control" %>
             </div>
 
-          </div>
+          </div> -->
 
           <!-- <div class="row" style="margin-top:3rem;">
             <div class="">
@@ -252,18 +252,20 @@
                 </div>
                 <% else %>
 
-                <div class="col-md-6" style="float:left;width:250px;">
+                <!-- <div class="col-md-6" style="float:left;width:250px;">
 
                 <%= link_to "Edit Paypal", edit_reviser_path(@k), class: "waves-effect waves-light btn", style: "font-weight:700;"%>
                   <br> Input Paypal Account
-                </div>
+                </div> -->
                 <div class="col-md-6" style="float:right;padding:1rem 1rem;">
                   <div class="row">
                     <%= f.simple_fields_for :revisers do |reviser| %>
             				<div class="form-group">
             					<!-- <%= reviser.check_box :active %> Activate Mentor Service -->
-                      <%= reviser.text_field :price_per %>
-                      <%= reviser.text_field :paypal %>
+                      Paypal Account : <%= reviser.text_field :paypal %>
+                      Price per hour: <%= reviser.select :price_per, [["30","30"],["40","40"],["50","50"],["60","60"],["70","70"],["80","80"],["90","90"],["100","100"]], prompt: "Select Price", class: "form-control" %>
+
+                      <!-- <%= reviser.text_field :price_per %> -->
 
             				</div>
                     <% end %>
