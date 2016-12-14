@@ -228,6 +228,7 @@ padding-bottom: 20px;
   float: left;
   overflow: hidden;
   border-radius: .5rem;
+  background-color: #000;
   img {
     display: block;
     margin: 0 auto;
@@ -833,7 +834,7 @@ border: 1px solid #feb65e;
   width:80%;
   background-color: #fff;
   padding: 1% 0 1% 0;
-  border: 2px solid #78909c;
+  border: 2px solid #e57373;
   border-radius: .5rem;
 }
 
@@ -1016,7 +1017,7 @@ input[type="checkbox"]:checked:before {
     margin-right:auto;
     float: none;
     border-radius: 5px;
-    border:2px solid #78909c;
+    border:2px solid #e57373;
     padding: 0 1rem;
 
 }
