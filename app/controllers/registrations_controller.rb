@@ -1,13 +1,13 @@
 class RegistrationsController < Devise::RegistrationsController
 	skip_before_action :autocomplete
-
-	def new
-		@user = User.new
-
-	end
-	def create
-		@user = User.new(configure_permitted_parameters)
-	end
+	# 
+	# def new
+	# 	@user = User.new
+	#
+	# end
+	# def create
+	# 	@user = User.new(configure_permitted_parameters)
+	# end
 
 
 
