@@ -1,6 +1,14 @@
 class RegistrationsController < Devise::RegistrationsController
 	skip_before_action :autocomplete
 
+	def new
+		@user = User.new
+
+	end
+	def create
+		@user = User.new(configure_permitted_parameters)
+	end
+
 
 
 
@@ -21,5 +29,8 @@ class RegistrationsController < Devise::RegistrationsController
 		       root_path
 		    end
 		end
+
+		private
+
 
 end

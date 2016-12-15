@@ -8,7 +8,6 @@ class User < ApplicationRecord
   #Categories
   has_many :revisers, :dependent => :delete_all
 
-  accepts_nested_attributes_for :revisers
 
 
   # #Scope
@@ -24,6 +23,8 @@ class User < ApplicationRecord
   has_many :languages
   has_many :specialties
   has_many :scholarships
+  accepts_nested_attributes_for :revisers, reject_if: proc { |attributes| attributes['education'].blank? }, allow_destroy: true
+
   accepts_nested_attributes_for :educations, reject_if: proc { |attributes| attributes['education'].blank? }, allow_destroy: true
 
   accepts_nested_attributes_for :scholarships, reject_if: proc { |attributes| attributes['name'].blank? }, allow_destroy: true
