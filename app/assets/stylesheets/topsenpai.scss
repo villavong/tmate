@@ -118,6 +118,37 @@ a:hover
 	// text-shadow: 4px 4px 2px rgba(150, 150, 150, 1);
 
 }
+.home_button {
+  text-align: center;
+  padding: 1rem;
+}
+.sample_button {
+  color: #fff;
+  font-size: 1.5rem;
+  padding: .2rem 1rem;
+  border: 3px solid #fff;
+  display: inline-block;
+  border-radius: 2rem;
+}
+.profile_button {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 300;
+  text-decoration: underline;
+  // padding: .2rem 1rem;
+  // border: 3px solid #fff;
+  // border-radius: 2rem;
+
+  display: inline-block;
+}
+.signup_button {
+  color: #fff;
+  font-size: 1.5rem;
+  padding: .2rem 1rem;
+  border: 3px solid #fff;
+  display: inline-block;
+  border-radius: 2rem;
+}
 .steps {
 	width: 100%;
 	min-height: 45rem;

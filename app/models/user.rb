@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
-         :omniauthable
+         :omniauthable, :confirmable
 
   #Categories
   has_many :revisers, :dependent => :delete_all
@@ -11,7 +11,10 @@ class User < ApplicationRecord
 
 
   # #Scope
-  scope :yes, -> { where(status: nil).where(state: "mentor")}
+  # scope :yes, -> { where(status: nil).where(state: "mentor")}
+  # scope :yes, -> { where(status: nil)}
+  # scope :yes, -> { where.not(status: "no") || where(status: nil)}
+  scope :yes, -> { where(status: "yes")}
 
   # scope :yes, -> { where.not(status: nil)}
 
@@ -23,7 +26,7 @@ class User < ApplicationRecord
   has_many :languages
   has_many :specialties
   has_many :scholarships
-  accepts_nested_attributes_for :revisers, reject_if: proc { |attributes| attributes['education'].blank? }, allow_destroy: true
+  accepts_nested_attributes_for :revisers, reject_if: proc { |attributes| attributes['price_per'].blank? }, allow_destroy: true
 
   accepts_nested_attributes_for :educations, reject_if: proc { |attributes| attributes['education'].blank? }, allow_destroy: true
 
@@ -132,6 +135,7 @@ class User < ApplicationRecord
   end
 
   def country_name
+
     c = ISO3166::Country[country]
     return c.translations[I18n.locale.to_s] || c.name
   end

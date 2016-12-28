@@ -1,5 +1,6 @@
 class BoardsController < ApplicationController
-  before_action :set_board, only: [:show, :edit, :update, :destroy]
+  before_action :set_board, only: [:new, :edit, :update, :destroy]
+  before_filter :require_permission, only: [:edit, :update, :destroy]
 
   # GET /boards
   # GET /boards.json
@@ -79,5 +80,12 @@ class BoardsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def board_params
       params.require(:board).permit(:title, :user_id, posts_attributes: [:board_id, :title, :content, :user_id])
+    end
+    def require_permission
+      @board = Board.find(params[:id])
+      if current_user.id != @board.user_id
+        redirect_to root_path, notice: "Sorry, you're not allowed"
+      end
+
     end
 end

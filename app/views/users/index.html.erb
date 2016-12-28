@@ -20,7 +20,7 @@
 
 
 
-                    <div class=" col s12 m12 l4">
+                    <!-- <div class=" col s12 m12 l4">
                       <div class="form-group">
                         <%= f.label :school_cont, "School"%>
 
@@ -30,12 +30,12 @@
 
                       </div>
 
-                    </div>
+                    </div> -->
                     <div class=" col s12 m12 l4">
                       <div class="form-group">
                         <%= f.label :school_cont, "Select from List", style: "font-weight:700;" %> <br>
                         <!-- <% options = options_for_select(User.yes.order(:school).uniq.pluck(:school)) %> -->
-                        <% options = options_for_select(User.yes.order(:school).uniq.pluck(:school)) %>
+                        <% options = options_for_select(User.yes.order(:school).uniq.pluck(:school), :selected => params[:q][:major_cont]) %>
 
                         <%= f.select :school_cont, options, {include_blank: "Select University"}, style: "width: 300px;" %>
 
@@ -44,8 +44,10 @@
 
                     <div class=" col s12 m12 l4">
                       <div class="form-group">
-                        <%= f.label :major_cont, "Major" %>
-                        <%= f.autocomplete_field :major_cont, autocomplete_user_major_suggestions_path, class: "form-control", id: "auto" %>
+                        <%= f.label :major_cont, "or Major" %>
+                        <!-- <%= f.autocomplete_field :major_cont, autocomplete_user_major_suggestions_path, class: "form-control", id: "auto" %> -->
+                        <% options = options_for_select(User.yes.order(:major).uniq.pluck(:major), :selected => params[:q][:major_cont]) %>
+                        <%= f.select :major_cont, options, {include_blank: "Select Major"}, style: "width: 290px;" %>
 
                       </div>
                     </div>
@@ -241,7 +243,6 @@ $(function() {
             <% end %>
             <% if user.status != "no"%>
             <% if user.state == "mentor" %>
-            <% end %>
 
                 <%= link_to new_message_path(to: user.id) do %>
                 <% end %>
@@ -253,6 +254,7 @@ $(function() {
                 </div>
                 <% end %>
 
+              <% end %>
               <% end %>
 
 

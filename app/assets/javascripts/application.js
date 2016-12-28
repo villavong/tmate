@@ -23,6 +23,8 @@
 $(document).ready(function() {
     $(".button-collapse").sideNav();
     $('select').material_select();
+    $('.collapsible').collapsible();
     $("#auto").autocomplete({
       source: '/suggestions/autocomplete_user_school'});
+
 });

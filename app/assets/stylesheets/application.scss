@@ -4,7 +4,10 @@ $primary-color: color("blue-grey", "lighten-1") !default;
 $secondary-color: color("red", "lighten-2") !default;
 // $navbar-font-color: #00897b !default;
 $navbar-font-color: #e57373 !default;
-
+.modal {
+  height: 88% !important;
+  width: 70% !important;
+}
 
 .ilike-blue-container {
   @extend .blue, .lighten-4;

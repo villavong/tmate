@@ -21,10 +21,21 @@
         <div class="wrapper">
           <p style="padding-top: 2rem;font-size: 1.5rem;">
             <strong><%= @board.title %> !!</strong>
+            <% if @board.id == 6  %>
 
             <br>
-            Say Hi, and share your experience!
+            Tell us what you are struggling with! (SOP, Essay, Housing,,,)<br>
+            Mentors will help you out!
             <br>
+            <% elsif @board.id ==  7 %>
+            <br>
+            Say Hi, and tell us what you can help with!
+            <br>
+            <% else %>
+            <br>
+            Let's share what scholarship you received ~!
+            <br>
+            <% end %>
           </p>
           <div class="cf">
             <%= link_to "New Post", "/boards/#{@board.id}/posts/new", class: "waves-effect waves-light btn right" %>

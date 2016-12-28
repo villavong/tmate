@@ -51,7 +51,20 @@
             <% end %>
             </div>
 
-
+            <div class="row" >
+            					<div class="col-xs-3" >
+            						<h2 style="font-size:20px;margin:0 auto;">Country:</h2>
+            					</div>
+            					<% if @user.country != nil %>
+            					<div class="col-xs-8" style="margin-left:30px;">
+            						<h><%= @user.country %></h>
+            					</div>
+            					<% else %>
+            					<div class="col-xs-8" style="margin-left:30px;height:20px;line-height:25px;">
+            						<h>N/A</h>
+            					</div>
+            				<% end %>
+    				</div>
 
   				<div class="row">
   					<div class="col-xs-3">
@@ -164,7 +177,25 @@
           </div>
   			</div>
         <!-- LANGUAGE, SPECIALTIES-->
+        <% if @user.languages != nil %>
 
+        <div class="row " style="margin-top:15px;" id="introduction">
+          <div class="col s12 m12 l7">
+
+              <h3 style="margin-bottom: 2rem;"> Languages </h3>
+              <% @user.languages.each do |f| %>
+
+              <p style="">- <%= f.language  %></p>
+              <% end %>
+
+
+
+
+
+          </div>
+        </div>
+        <% else %>
+        <% end %>
         <!-- <div class="row col-md-12" style="height:20rem;max-height:20rem;margin-top:15px;min-width:600px;" id="introduction">
 
           <div class="col-xs-6">
@@ -204,26 +235,6 @@
           </div>
         </div> -->
 
-      <!--  SCHOLARSHIPS-->
-      <% if @user.scholarships != nil %>
-
-      <div class="row " style="margin-top:15px;" id="introduction">
-        <div class="col s12 m12 l7">
-
-            <h3 style="margin-bottom: 2rem;"> Scholarships </h3>
-            <% @user.scholarships.each do |f| %>
-
-            <p style="">- <%= f.name  %></p>
-            <% end %>
-
-
-
-
-
-        </div>
-      </div>
-      <% else %>
-      <% end %>
 
           <!-- WORK EXPERIENCE -->
   				<!-- <div class="col-xs-12" style="height:25rem;max-height:50rem;overflow:scroll">
@@ -259,6 +270,26 @@
 
   			</div>
 
+              <!--  SCHOLARSHIPS-->
+              <% if @user.scholarships != nil %>
+
+              <div class="row " style="margin-top:15px;" id="introduction">
+                <div class="col s12 m12 l7">
+
+                    <h3 style="margin-bottom: 2rem;"> Scholarships </h3>
+                    <% @user.scholarships.each do |f| %>
+
+                    <p style="">- <%= f.name  %></p>
+                    <% end %>
+
+
+
+
+
+                </div>
+              </div>
+              <% else %>
+              <% end %>
         <!--  SCHOLARSHIPS-->
 
         <!-- <div class="row " style="height:20rem;margin-top:15px;overflow:scroll;min-width:600px;" id="introduction">

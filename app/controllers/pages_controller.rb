@@ -4,6 +4,7 @@ class PagesController < ApplicationController
 
 
 	def home
+	
 
 		@search = User.ransack(params[:q])
 
@@ -13,7 +14,8 @@ class PagesController < ApplicationController
 		# @arrUsers = @results.order("last_sign_in_at DESC").to_a.uniq
 		# @arrUsers =User.all
 
-		@arrUsers = @results.shuffle.first(24).to_a.uniq
+		# @arrUsers = @results.shuffle.first(24).to_a.uniq
+		@arrUsers = @results.shuffle.to_a.uniq
 
 
 		@posts = Post.all.order("created_at DESC")
@@ -44,9 +46,11 @@ class PagesController < ApplicationController
 
 	def school_list
 		@users = User.all
+#
+		# @countries = User.yes.order(:country).uniq.pluck(:country)
+		@countries = User.yes.order(:country).uniq.pluck(:country)
 
-			@countries = User.order(:country).uniq.pluck(:country)
-			@cities = User.order(:city).uniq.pluck(:city)
+			@cities = User.yes.order(:city).uniq.pluck(:city)
 
 			@company_names = User.yes.order(:company_name).uniq.pluck(:company_name)
 

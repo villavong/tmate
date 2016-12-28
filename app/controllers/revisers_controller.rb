@@ -7,6 +7,7 @@ before_action :authenticate_user!
 
   def index
     @revisers = current_user.revisers
+    redirect_to root_path
   end
 
   def show
@@ -18,6 +19,7 @@ before_action :authenticate_user!
 
 
   def new
+
     @reviser = current_user.revisers.build
 
    # @reviser = current_user.build_reviser(params[:reviser])
@@ -25,8 +27,8 @@ before_action :authenticate_user!
   end
 
   def create
+
     @reviser = current_user.revisers.build(reviser_params)
-    current_user.
 
     if @reviser.save
       redirect_to edit_user_registration_path(current_user.id), notice: "Became A Mentor!!"
@@ -80,3 +82,4 @@ private
       end
 
     end
+end

@@ -9,7 +9,7 @@ before_action :set_user, except: [:index, :show]
 
 
 
-		@results = @search.result.paginate(:page => params[:page], :per_page => 24)
+		@results = @search.result.paginate(:page => params[:page], :per_page => 120)
 
 		@arrUsers = @results.order("last_sign_in_at DESC").to_a.uniq
 
