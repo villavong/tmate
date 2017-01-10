@@ -72,6 +72,8 @@
                 reader.readAsDataURL(image);
                 console.log(files);
               });
+              $("#auto_country2").autocomplete({
+                source: '/suggestions/autocomplete_country_name'});
             });
 
 
@@ -112,29 +114,28 @@
               <label style="margin-bottom:-20px;margin-top:.3rem;padding:.5rem 0;font-weight:700;">*Nationality</label>
             </div>
             <div class="">
-              <!-- <%= f.text_field :country, :class => 'form-control', :placeholder => "Your Nationality", autofocus: false %> -->
-              <%= f.autocomplete_field :country, autocomplete_user_city_suggestions_path, class: "form-control", style: "width:100%"  %>
+              <!-- <%= f.text_field :nationality, :class => 'form-control', :placeholder => "Your Nationality", autofocus: false, id: "auto_country" %> -->
+              <%= f.autocomplete_field :nationality, autocomplete_country_name_suggestions_path, class: "form-control", style: "width:100%", id: "auto_country2"  %>
 
                   <!-- <%= f.country_select :country, :selected => f.object.country, :class => 'dselect', autofocus: true %> -->
             </div>
           </div>
-          <div class="row">
+
+          <!-- <div class="row">
             <div class="">
               <label style="margin-bottom:-20px;margin-top:.3rem;padding:.5rem 0;font-weight:700;">City you live now</label>
             </div>
 
             <div class="">
-              <!-- <%= f.select :city,[["Seoul","Seoul"],["Busan","Busan"]],prompt: "Select Region", class: "form-control"  %> -->
-              <!-- <%= f.text_field :city, :class => 'form-control', :placeholder => "Current or Latest School　最後の学校", autofocus: false %> -->
+              <%= f.select :city,[["Seoul","Seoul"],["Busan","Busan"]],prompt: "Select Region", class: "form-control"  %>
+              <%= f.text_field :city, :class => 'form-control', :placeholder => "Current or Latest School　最後の学校", autofocus: false %>
 
               <%= f.autocomplete_field :city, autocomplete_user_city_suggestions_path, class: "form-control", style: "width:100%"  %>
 
             </div>
 
 
-          </div>
-
-
+          </div> -->
 
 
 
@@ -146,9 +147,25 @@
             <div class="">
               <%= f.text_field :school, :placeholder => "Current or Latest School", class: "form-control", style: "width:100%"  %>
 
-              <!-- <%= f.autocomplete_field :school, autocomplete_user_school_suggestions_path, :placeholder => "Current or Latest School", class: "form-control", style: "width:100%"  %> -->
+              <!-- <%= f.autocomplete_field :school, autocomplete_school_name_suggestions_path, :placeholder => "Current or Latest School", class: "form-control", style: "width:100%", id: "auto_school"  %> -->
             </div>
 
+          </div>
+          <div class="row">
+            <div class="">
+              <label style="margin-bottom:-20px;margin-top:.3rem;padding:.5rem 0;font-weight:700;">*Country of School</label>
+            </div>
+            <div class="">
+              <%= f.autocomplete_field :country, autocomplete_country_name_suggestions_path, class: "form-control", style: "width:100%", id: "auto_country"  %>
+
+              <!-- <%= f.autocomplete_field :country, autocomplete_country_name_suggestions_path, class: "form-control", style: "width:100%", id: "auto_country2"  %> -->
+
+              <!-- <%= f.text_field :country, :class => 'form-control', :placeholder => "Your Nationality", autofocus: false, id: "auto_country" %> -->
+
+              <!-- <%= f.autocomplete_field :country, autocomplete_user_country_suggestions_path, class: "form-control", style: "width:100%"  %> -->
+
+                  <!-- <%= f.country_select :country, :selected => f.object.country, :class => 'dselect', autofocus: true %> -->
+            </div>
           </div>
 
           <div class="row">
@@ -400,6 +417,7 @@
               </div>
           </div>
         </div>
+
         <div class="row " style="margin-top:0rem;margin-bottom:3rem;">
           <div class="col l12" id="languages" >
             <div class="col s12 l6 cat_field" style="text-align:left;padding-left:2rem;border-bottom:1px solid #ccc">

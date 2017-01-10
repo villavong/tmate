@@ -161,7 +161,7 @@ def notify
 
 	reservation = Reservation.find(params[:item_number])
 
-			if status = "Completed"
+			if status == "Completed"
 				reservation.update_attributes status: true
 			else
 				reservation.destroy

@@ -21,10 +21,26 @@
 //= require toastr
 //= require_tree .
 $(document).ready(function() {
-    $(".button-collapse").sideNav();
-    $('select').material_select();
-    $('.collapsible').collapsible();
-    $("#auto").autocomplete({
-      source: '/suggestions/autocomplete_user_school'});
+  $(".button-collapse").sideNav();
+  $('select').material_select();
+  $('.collapsible').collapsible();
+  $("#auto").autocomplete({
+    source: '/suggestions/autocomplete_user_school'});
+  $("#auto_school").autocomplete({
+    source: '/suggestions/autocomplete_school_name'});
+  $("#auto_country").autocomplete({
+    source: '/suggestions/autocomplete_country_name'});
+  $("#auto_country2").autocomplete({
+    source: '/suggestions/autocomplete_country_name'});
+  $('.slider').slider({full_width: true, interval:12000000});
+  $('.slider').slider('pause');
+  // Start slider
+  $('.slider').slider('start');
+  // Next slide
+  $('.slider').slider('next');
+  // Previous slide
+  $('.slider').slider('prev');
+  $('.carousel.carousel-slider').carousel({full_width: true});
+  $('.carousel').carousel({dist:0,time_constant:1000,full_width:true});
 
 });

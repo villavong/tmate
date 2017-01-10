@@ -8,6 +8,8 @@ class SuggestionsController < ApplicationController
 
   autocomplete :user, :major
   autocomplete :user, :institute
+  autocomplete :school, :name
+  autocomplete :country, :name
 
 
 

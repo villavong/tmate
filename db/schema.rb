@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161217040559) do
+ActiveRecord::Schema.define(version: 20170102211318) do
 
   create_table "boards", force: :cascade do |t|
     t.string   "title"
@@ -46,6 +46,13 @@ ActiveRecord::Schema.define(version: 20161217040559) do
     t.index ["board_id"], name: "index_comments_on_board_id"
     t.index ["post_id"], name: "index_comments_on_post_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "countries", force: :cascade do |t|
+    t.string   "name"
+    t.string   "country_code"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "educations", force: :cascade do |t|
@@ -241,6 +248,7 @@ ActiveRecord::Schema.define(version: 20161217040559) do
     t.boolean  "access"
     t.string   "state"
     t.boolean  "admin"
+    t.string   "nationality"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

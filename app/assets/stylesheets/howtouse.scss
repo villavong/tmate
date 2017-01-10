@@ -1,4 +1,27 @@
+.chat {
+  width: 0px;
+  height: 0px;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-right: 6px solid transparent;
 
+}
+.dialogue {
+  border-radius: .5rem;
+  padding: 1rem;
+  background-color: #fafafa;
+}
+
+@media (max-width: 768px) {
+  .logos{
+    display: none !important; 
+  }
+}
+@media only screen and (min-width: 992px) {
+  .logos{
+
+  }
+}
 .how {
   // background-image: image-url("sky.jpeg");
   // background-size: 100%;

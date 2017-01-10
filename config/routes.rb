@@ -50,6 +50,8 @@ get '/how-to-use/kr' => 'pages#korea'
 get '/how-to-use/en' => 'pages#english'
 get '/how-to-use/jp' => 'pages#japan'
 get '/how-to-use/ch' => 'pages#china'
+get '/how-to-use' => 'pages#howtouse'
+
 
 
 
@@ -67,6 +69,10 @@ end
   get :autocomplete_user_city, :on => :collection
   get :autocomplete_user_school, :on => :collection
   get :autocomplete_user_major, :on => :collection
+  get :autocomplete_school_name, :on => :collection
+  get :autocomplete_country_name, :on => :collection
+
+
  end
 
 

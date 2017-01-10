@@ -1,3 +1,23 @@
+.search_bar {
+  background-color: #fff;
+  padding: 1rem 0;
+  width:75%;
+  margin: 0 auto;
+  border-radius: .5rem;
+  margin-bottom: 1rem;
+  clear: both;
+  display: block;
+  // opacity: .8;
+
+  .search_tab {
+    width:80%;
+    border-radius: .5rem;
+    margin: 0 auto;
+  }
+}
+.search_bar:after {
+
+}
 a {
     color: #4f4f4f;
     text-decoration: none;
@@ -120,7 +140,7 @@ a:hover
 }
 .home_button {
   text-align: center;
-  padding: 1rem;
+  padding: .5rem;
 }
 .sample_button {
   color: #fff;

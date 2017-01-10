@@ -1,10 +1,10 @@
 class PagesController < ApplicationController
 
-	before_action :authenticate_user!, except: [:home, :school_list, :about, :korea, :english, :japan, :china]
+	before_action :authenticate_user!, except: [:home, :school_list, :about, :korea, :english, :japan, :china, :howtouse]
 
 
 	def home
-	
+
 
 		@search = User.ransack(params[:q])
 
@@ -66,7 +66,9 @@ class PagesController < ApplicationController
 			@educations = Education.order(:education).uniq.pluck(:education)
 
 	end
+	def howtouse
 
+	end
 	def about
 	end
 

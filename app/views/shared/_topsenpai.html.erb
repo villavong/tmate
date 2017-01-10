@@ -4,7 +4,7 @@
       <div id="real-note">
         <!-- 실제 합격생에게 상담받으세요 <br> -->
 
-        Tweedlemate is a platform<br>
+        Tweedlemate is a networking platform<br>
           for students from around the world <br>
 
         <!-- Want to Help other students coming <br>to your school? <br><br> -->
@@ -61,9 +61,10 @@
     </div>
 
     <div class="home_button">
-      <a href="#modal1" class="modal-trigger sample_button">Korean</a>
+      <!-- <a href="#modal1" class="modal-trigger sample_button">Korean</a> -->
 
-      <a href="#modal2" class="modal-trigger sample_button">English</a>
+      <!-- <a href="#modal2" class="modal-trigger sample_button">Sample Profile</a> -->
+      <a href="#modal2" class="modal-trigger sample_button">How to Use</a>
 
       <a href="/sign_up" class="signup_button">Sign Up</a>
 
@@ -72,10 +73,12 @@
 
 
 
+
   </row>
-
-
 </div>
+
+<!-- *:::::::::::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::: -->
 <div id="modal1" class="modal modal-fixed-footer">
   <div class="modal-content" style="">
     멘토를 검색하고 메세지를 보내보세요! <br>
@@ -176,6 +179,8 @@
     <a href="#!" class="modal-action modal-close waves-effect waves-green waves-light btn ">Okay!</a>
   </div> -->
 </div>
+
+
 <div id="modal2" class="modal modal-fixed-footer">
   <div class="modal-content">
     <b>
@@ -183,20 +188,41 @@
       Ask about their experiences in admissions, and
       get help on writing application essay!
     </b>
-    <h5>Columbia University</h5>
-    <p>
+    <h5>Profile Example</h5>
+    <h5><a href="http://www.tweedlemate.com/users/25">Jeewon So</a></h5>
+    <div class="row">
+      <div class="col l4" style="display:block;">
+        <%= image_tag('jeewon.jpg', :style => "margin-left:1.5rem;max-width:200px;display:inline;clear:both;")%>
+
+      </div>
+      <div class="col l8">
+        <p style="">
+          Originally from South Korea, I finished my undergraduate education at Colgate University, NY. Currently I am enrolled in a PhD program at Columbia Universtiy, NY. During my time at Colgate I went abroad to Ca Foscari University in Venice, Italy and Yonsei University in Seoul, South Korea a semester each as a visiting student, and University of Kiel in Kiel, Germany for a summer as a student researcher. I am fluent in Korean and English and love to meet new friends and help out visiting students!
+
+        </p>
+        <p style="">
+          - Colgate University (Undergraduate) '10-'13 <br>
+          - Columbia Universtiy (PhD)  '13- Present <br>
+          - Ca Foscari University in Venice, Italy ('12 Erasmus)
+
+        </p>
+        <br><br>
+
+         **<a href="http://www.tweedlemate.com/users/25" >
+
+          <b>and Yes she's real! Click here to Send her a message!</b>
+          </a>
+      </div>
+    </div>
+
+    <!-- <p>
     <%= image_tag('jeewon.jpg', :style => "margin-left:1.5rem;max-width:200px;display:inline;")%>
 
     Originally from South Korea, I finished my undergraduate education at Colgate University, NY. Currently I am enrolled in a PhD program at Columbia Universtiy, NY. During my time at Colgate I went abroad to Ca Foscari University in Venice, Italy and Yonsei University in Seoul, South Korea a semester each as a visiting student, and University of Kiel in Kiel, Germany for a summer as a student researcher. I am fluent in Korean and English and love to meet new friends and help out visiting students!
-    <br><br>
-
-     **<a href="http://www.tweedlemate.com/users/25" >
-
-      <b>Click here to Send her a message!</b>
-      </a>
 
 
-    </p>
+
+    </p> -->
   </div>
   <!-- <div class="modal-footer">
     <a href="#!" class="modal-action modal-close waves-effect waves-green waves-light btn ">Okay!</a>
@@ -288,130 +314,3 @@
     <a href="#!" class="modal-action modal-close waves-effect waves-green waves-light btn ">Okay!</a>
   </div> -->
 </div>
-
-<div class="white_background">
-  <div class="container_index">
-        <div class="container-body">
-
-          <div class="row">
-
-              <%= search_form_for @search do |f| %>
-
-                <div class="form-inline">
-
-                  <div class="form-row">
-
-                      <div class="col-md-12" style="text-align:center;margin-bottom:2rem;font-size:1.5rem;font-weight:700;">
-                        Search Profile and Get Help
-                        <br>
-                      </div>
-                  </div>
-                  <div class="form-row">
-
-                    <!-- <div class="col s12 m412 l4">
-                      <div class="form-group">
-                        <%= f.label :school_cont, "School", style: "font-weight:700;" %> <br>
-
-                        <%= f.autocomplete_field :school_cont, autocomplete_user_school_suggestions_path, id: "auto"  %>
-
-
-
-                      </div>
-
-                    </div> -->
-                    <div class=" col s12 m12 l4">
-                      <div class="form-group">
-                        <%= f.label :school_cont, "Select from List", style: "font-weight:700;" %> <br>
-                        <% options = options_for_select(User.yes.order(:school).uniq.pluck(:school)) %>
-
-                        <%= f.select :school_cont, options, {include_blank: "Select University"}, style: "width: 300px;" %>
-
-                      </div>
-                    </div>
-                    <div class=" col s12 m12 l4">
-                      <div class="form-group">
-                        <%= f.label :major_cont, "or Major" %>
-                        <!-- <%= f.autocomplete_field :major_cont, autocomplete_user_major_suggestions_path, class: "form-control", id: "auto" %> -->
-                        <% options = options_for_select(User.yes.order(:major).uniq.pluck(:major)) %>
-                        <%= f.select :major_cont, options, {include_blank: "Select Major"}, style: "width: 290px;" %>
-
-                      </div>
-                    </div>
-                    <!-- <div class="input-field col s12 m12 l4">
-                      <div class="form-group">
-                        <%= f.label :school_cont, "Select from List", style: "font-weight:700;" %> <br>
-                        <% options = options_for_select(User.order(:school).uniq.pluck(:school)) %>
-                        <%= f.select :school_cont, options, {include_blank: "Select University"}, style: "width: 300px;" %>
-
-                      </div>
-                    </div> -->
-
-
-
-
-                    <br>
-                    <br>
-                  </div>
-
-                </div>
-
-
-
-                <div class="row">
-                  <div class="col-3">
-
-                  </div>
-                  <div class="col-9 pull-right">
-                  <br>  *You may leave blanks for any column
-
-                  </div>
-
-                </div>
-                <!-- <div id="submit">
-                  <%= link_to "All Profiles", "/users?utf8=%E2%9C%93&q%5Bcountry_cont%5D=&q%5Bcity_cont%5D=&q%5Bschool_cont%5D=&q%5Bmajor_cont%5D=&commit=Search", class: "waves-effect waves-light btn" %>
-
-                </div> -->
-                <div id="submit" >
-                  <%= f.submit "Search", class: "waves-effect waves-light btn right", style: "" %>
-
-                </div>
-              <% end %>
-
-
-
-          </div>
-
-        </div>
-
-
-
-    </div>
-
-
-
-
-</div>
-<br>
-
-
-
-
-<br>
-
-<!-- <div class="white_background">
-  <div class="container_index" >
-
-  </div>
-</div> -->
-
-
-
-
-
-<!-- <br>
-
-<div class="commission">
-  <i>Commission Free Until October!!</i>
-</div>
-<br><br>
- -->

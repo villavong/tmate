@@ -6,26 +6,15 @@ before_action :set_user, except: [:index, :show]
 	def index
 
 		@search = User.ransack(params[:q])
-
-
-
 		@results = @search.result.paginate(:page => params[:page], :per_page => 120)
 
 		@arrUsers = @results.order("last_sign_in_at DESC").to_a.uniq
-
-
-
-
 		@revisers = Reviser.all
 
 		@posts = Post.all.order("created_at DESC")
 		@boards = Board.all
 
 		# @user = @search.result.order("created_at DESC").to_a.uniq
-
-
-
-
 		# respond_to do |format|
     #   format.html
     #   format.js

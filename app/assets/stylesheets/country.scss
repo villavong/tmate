@@ -1,0 +1,66 @@
+@media (max-width: 768px) {
+  .flex-s {
+    display: flex;
+    flex-direction: column; /* Stack on top */
+  }
+  .box-a {
+    order: 2; /* Go down, bring Box B up */
+  }
+}
+@media only screen and (min-width: 992px) {
+  .country_img {
+    height: 10rem;
+    overflow: hidden;
+  }
+  .card .card-title {
+    font-size: 2.5rem !important;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 992px) {
+  .country_img {
+    height: 10rem;
+    overflow: hidden;
+  }
+  .card .card-title {
+    font-size: 2.5rem !important;
+  }
+}
+@media (max-width: 600px) {
+
+  .country_img {
+    max-height: 5rem;
+  }
+  .card .card-title {
+    font-size: 1.3rem !important;
+  }
+}
+
+#card {
+  filter: brightness(80%);
+  color: #fff;
+
+  &:hover {
+    filter: brightness(110%);
+
+    // opacity: .5;
+    color: #fff;
+  }
+}
+.cover {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-image: url("/assets/whitehouse.jpg");
+  @media only screen and (min-width: 992px) {
+    height: 21.5rem;
+
+      }
+    @media only screen and (min-width: 600px) and (max-width: 992px) {
+      min-height: 8rem;
+
+    }
+    @media (max-width: 600px) {
+      min-height: 8rem;
+
+    }
+}

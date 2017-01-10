@@ -20,7 +20,7 @@ def view_count
   Viewcount.all.each do |x|
     ip_address_set << x.ip_address
   end
-  @total_view_count =ip_address_set.uniq.count - 322
+  @total_view_count =ip_address_set.uniq.count - 1322
 
   # @total_view_count =Viewcount.count
 
@@ -54,7 +54,7 @@ protected
 		#devise_parameter_sanitizer.for(:sign_up) <<
 		#devise_parameter_sanitizer.for(:account_update) << :username
 		devise_parameter_sanitizer.permit(:sign_up) { |u| u.permit(:name, :fullname, :email, :password, :password_confirmation, :remember_me, :country, :city, :school, :major, :schoolemail, :admin, :state, :status) }
-    devise_parameter_sanitizer.permit(:account_update) { |u| u.permit(:name, :email, :username, :fullname, :description, :password, :current_password, :avatar, :profile_img, :country, :city, :school, :major, :school_description, :occupation, :company_name, :sharecontact, :occupation_details, :access, :kakao, :state,:schoolemail, :status, :contact, :institute, :admin, :languages_attributes => [:id, :_destroy, :language], :specialties_attributes => [:id, :specialty, :_destroy], :scholarships_attributes => [:id, :name, :amount, :_destroy], :educations_attributes => [:id, :education, :_destroy], :works_attributes => [:id, :work, :_destroy], :revisers_attributes => [:id, :price_per, :active, :paypal, :amount]) }
+    devise_parameter_sanitizer.permit(:account_update) { |u| u.permit(:name, :email, :username, :fullname, :description, :password, :current_password, :avatar, :profile_img, :country, :city, :school, :major, :school_description, :nationality, :occupation, :country_id, :school_id, :company_name, :sharecontact, :occupation_details, :access, :kakao, :state,:schoolemail, :status, :contact, :institute, :admin, :languages_attributes => [:id, :_destroy, :language], :specialties_attributes => [:id, :specialty, :_destroy], :scholarships_attributes => [:id, :name, :amount, :_destroy], :educations_attributes => [:id, :education, :_destroy], :works_attributes => [:id, :work, :_destroy], :revisers_attributes => [:id, :price_per, :active, :paypal, :amount],:schools_attributes => [:id, :name, :school_id],:countries_attributes => [:id, :name, :country_id]) }
     # devise_parameter_sanitizer.permit(:account_update)
 	end
 
