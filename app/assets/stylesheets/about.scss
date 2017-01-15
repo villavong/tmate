@@ -1,20 +1,52 @@
+// .about {
+//   background-image: image-url("oceansm.jpg");
+//   background-size: 100%;
+//   background-position: center center;
+//   background-repeat:   no-repeat;
+//   width:100%;
+//   margin:0 auto;
+//
+//   .about_content {
+//     width:90%;
+//     margin:.5rem auto;
+//     background-color: #fff;
+//     border-radius: .5rem;
+//     color: #2c3135;
+//     font-size: 1.7rem;
+//     padding: 2rem;
+//     opacity: .9;
+//   }
+// }
+
 .about {
-  // background-image: image-url("talks.jpeg");
-  // background-size: 100%;
-  // background-position: center center;
-  // background-repeat:   no-repeat;
-  width:100%;
-  margin:0 auto;
-  padding-top:3rem;
-  padding-bottom:30rem;
-  .about_content {
-    width:90%;
-    margin:.5rem auto;
-    background-color: #fff;
-    border-radius: .5rem;
-    color: #2c3135;
-    font-size: 1.7rem;
-    padding: 2rem;
-    opacity: .9;
+  background-color: transparent;
+  background-image: image-url("teens.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  color: white;
+  padding: 0;
+  height: 300px;
+  position: relative;
+  font-weight: 900;
+  text-shadow: 2px 2px #2c3135;
+  .about_title {
+    @media only screen and (min-width: 992px) {
+      top:8rem;
+    }
+
+    @media only screen and (min-width: 600px) and (max-width: 992px) {
+      top:4rem;
+    }
+    @media (max-width: 600px) {
+      top:4rem;
+
+    }
+
+  }
+
+
+  image {
+    filter: brightness(50%);
   }
 }

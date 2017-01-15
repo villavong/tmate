@@ -1,21 +1,23 @@
+// _testimonial_back
+
 .profile_img {
   margin:0 auto;
   display: block;
   overflow: hidden;
 
   @media only screen and (min-width: 992px) {
-    height: 14rem !important;
+    height: 9rem !important;
     width:100% !important;
 
   }
 
-  @media only screen and (min-width: 600) and (max-width: 992px) {
-    // height: 14rem;
+  @media only screen and (min-width: 600px) and (max-width: 992px) {
+    height: 14rem;
 
   }
 
   @media (max-width: 600px) {
-    // height: 14rem;
+    height: 14rem;
 
   }
 
@@ -25,7 +27,32 @@
   padding:2rem 0;
 }
 .univ_name {
-  color: #a94442;
+  color: #e57373;
+  font-size: .9rem;
+  overflow: hidden;
+}
+@media only screen and (min-width: 992px) {
+  .mentor_panel {
+    height: 20rem !important;
+
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 992px) {
+  .mentor_panel {
+    height: 25rem !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .mentor_panel {
+    height: 20rem !important;
+
+  }
+}
+
+.price {
+  color:#a94442;
   font-weight: 600;
-  font-size: 1.2rem;
+
 }

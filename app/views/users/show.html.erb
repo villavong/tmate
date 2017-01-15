@@ -53,11 +53,11 @@
 
             <div class="row" >
             					<div class="col-xs-3" >
-            						<h2 style="font-size:20px;margin:0 auto;">Nationality:</h2>
+            						<h2 style="font-size:20px;margin:0 auto;">Country:</h2>
             					</div>
-            					<% if @user.nationality != nil %>
+            					<% if @user.country != nil %>
             					<div class="col-xs-8" style="margin-left:30px;">
-            						<h><%= @user.nationality %></h>
+            						<h><%= @user.country %></h>
             					</div>
             					<% else %>
             					<div class="col-xs-8" style="margin-left:30px;height:20px;line-height:25px;">
@@ -142,7 +142,7 @@
   							<% @user.revisers.each do |reviser| %>
                 <%= link_to reviser do %>
 
-                <div class="waves-effect waves-light btn">Make an Appointment</div>
+                <div class="waves-effect waves-light btn">Make Payment</div>
                 <% end %>
   								<!-- <% if reviser.active == true %>
   								<%= link_to reviser do %>
@@ -321,3 +321,23 @@
   	</div>
 
 </div>
+
+<% if @user.reviews == nil %>
+<div class="row">
+  <div class="col s12 l6 offset-l3">
+    <h5>Thank you Notes <span id="average_rating"></span> (<%= @reviews.count %>)</h5>
+    <div class="container">
+      <% if(!user_signed_in?) %>
+      <% else %>
+      <div>
+        <%= render 'reviews/form'%>
+      </div>
+      <% end %>
+
+      <div>
+        <%= render 'reviews/list' %>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>

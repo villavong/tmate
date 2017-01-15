@@ -42,5 +42,7 @@ $(document).ready(function() {
   $('.slider').slider('prev');
   $('.carousel.carousel-slider').carousel({full_width: true});
   $('.carousel').carousel({dist:0,time_constant:1000,full_width:true});
+  $('.collapsible').collapsible();
+  $('ul.tabs').tabs();
 
 });

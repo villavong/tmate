@@ -1,0 +1,25 @@
+.mentor_back {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+	// background-image: image-url("study.jpeg");
+  // background-image: image-url("work.jpg");
+  background-color: #f5f5f5;
+  margin: 0 auto;
+  padding: 0;
+  border-radius: 0;
+  width: 100%;
+}
+.chat {
+  width: 0px;
+  height: 0px;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-right: 6px solid transparent;
+
+}
+.dialogue {
+  border-radius: .5rem;
+  padding: 1rem;
+  background-color: #fff;
+}

@@ -1,20 +1,26 @@
 <% if @reviews.count == 0 %>
-<div class="text-center"><h4>There is no review yet</h4></div>
+<div class="text-center"><h5>There is no review yet</h5></div>
 <% else %>
 
 <% @reviews.order("id desc").each do |r| %>
 <hr>
 
 <div class=row>
-	<div class="col-md-1">
-		
-		<%= image_tag r.user.avatar.url(:medium), :id => "image-tag", class: "img-circle thumbnail2"%> 
+	<div class="col l1">
+
+		<!-- <%= image_tag r.user.profile_img.url(:medium), :id => "image-tag", class: "img-circle thumbnail2"%> -->
 	</div>
-	<div class="col-md-11">
+	<div class="col l11">
 		<div>
-			<strong><%= r.user.fullname %> <div id="stars_<%= r.id %>"></div> </strong>
+			<strong>
+
+				<%= r.author_name %>
+				<!-- <%= r.user.fullname %> -->
+
+				<!-- <div id="stars_<%= r.id %>"></div>  -->
+			</strong>
 			<span class="pull-right">
-				<%= link_to "Remove", [@reviser, r], method: :delete, data: {confirm: "Are you sure?"} if current_user && current_user == r.user %> 
+				<%= link_to "Remove", [@user, r], method: :delete, data: {confirm: "Are you sure?"} if current_user && current_user == r.user %>
 			</span>
 		</div>
 		<div><%= r.created_at.strftime("%v") %></div>
@@ -32,5 +38,3 @@
 
 <% end %>
 <% end %>
-
-

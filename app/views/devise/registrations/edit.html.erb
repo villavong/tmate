@@ -46,7 +46,7 @@
             <%= f.file_field :profile_img, id: 'pictureInput', class: 'waves-effect waves-light btn', style: 'width:190px;'%>
 
             <div class="">
-            *School Logo is Fine</div>
+            Smiles are contagious :)</div>
           </div>
 
 
@@ -204,16 +204,16 @@
           </div> -->
 
 
-          <!-- <div class="row" style="">
+          <div class="row" style="">
             <div class="">
-              <label style="margin-bottom:-20px;margin-top:.3rem;padding:.5rem 0;font-weight:700;">멘토(선배) or 멘티(예비) </label>
+              <label style="margin-bottom:-20px;margin-top:.3rem;padding:.5rem 0;font-weight:700;">Mentor or Mentee </label>
             </div>
 
             <div class="">
-              <%= f.select :state, [["멘토(선배)", "mentor"],["멘티(예비)", "mentee"]], class: "form-control" %>
+              <%= f.select :state, [["Mentor", "mentor"],["Mentee", "mentee"]], class: "form-control" %>
             </div>
 
-          </div> -->
+          </div>
 
           <!-- <div class="row" style="margin-top:3rem;">
             <div class="">
@@ -426,10 +426,9 @@
             </div>
             <div class="row">
               <div class="col-md-12" id="languages" >
+              
                 <%= f.simple_fields_for :languages do |language| %>
                   <% render 'language_fields', f: language %>
-
-
                 <% end %>
               </div>
             </div>

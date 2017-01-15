@@ -52,6 +52,8 @@ $button-raised-color: #fff !default;
 @import "university";
 @import "glmentors";
 @import "slider.scss";
+@import "testimonial.scss";
+
 
 /*---------------------------------------*/
 
@@ -1212,5 +1214,22 @@ input[type="checkbox"]:checked:before {
 .links {
   a {
     color:#fff;
+  }
+}
+/*    ------------------------------------------------------------------*/
+/*    ------------------------------------------------------------------*/
+
+.signup {
+  background-color: transparent;
+  background-image: image-url("woman.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  color: white;
+  padding: 0;
+  height: 330px;
+  position: relative;
+  image {
+    filter: brightness(50%);
   }
 }

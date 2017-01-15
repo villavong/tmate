@@ -57,9 +57,10 @@ get '/how-to-use' => 'pages#howtouse'
 
 
 
-resources :revisers do
+resources :users do
   resources :reviews, only: [:create, :destroy]
 end
+
 
 
  resources :suggestions do
