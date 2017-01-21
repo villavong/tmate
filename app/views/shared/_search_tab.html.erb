@@ -19,12 +19,12 @@
                   <div class="form-row">
                     <div class="col s12 m12 l12">
                       <div class="form-group">
-                        <%= f.label :country_cont, "Country/School", style: "font-weight:700;" %> <br>
+                        <%= f.label :country_cont, "Country/School/Major", style: "font-weight:700;" %> <br>
                         <!-- <% options = options_for_select(Country.order(:name).uniq.pluck(:name)) %>
 
                         <%= f.select :country_cont, options, {include_blank: "Select Country"}, style: "width: 300px;" %>
                         <%= f.autocomplete_field :country_cont, autocomplete_user_country_suggestions_path, id: "auto_country"  %> -->
-                        <%= f.text_field :school_or_country_cont, :placeholder => 'Country or School contains'  %>
+                        <%= f.text_field :school_or_nationality_or_major_or_country_cont, :placeholder => 'Country/School/Major contains'  %>
 
 
 

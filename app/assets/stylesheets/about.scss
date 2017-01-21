@@ -32,14 +32,14 @@
   text-shadow: 2px 2px #2c3135;
   .about_title {
     @media only screen and (min-width: 992px) {
-      top:8rem;
+      top:10rem;
     }
 
     @media only screen and (min-width: 600px) and (max-width: 992px) {
-      top:4rem;
+      top:9rem;
     }
     @media (max-width: 600px) {
-      top:4rem;
+      top:9rem;
 
     }
 
@@ -49,4 +49,37 @@
   image {
     filter: brightness(50%);
   }
+}
+
+.about_ttl {
+  font-size: 1.5rem;
+  text-decoration: underline;
+  // color: #e57373;
+  color: $basic;
+  font-weight: 600;
+
+}
+.about_container {
+  width:60%;
+}
+
+.about_cnt {
+  // font-weight: 600;
+  font-size: 1rem;
+
+}
+.about_set {
+  padding: 1rem;
+  margin: 2rem 0;
+  // border-radius: .5rem;
+  border-bottom: 2px solid #78909c;
+}
+
+.team {
+  // border-bottom: 2px solid #78909c;
+}
+.mission {
+  font-size: 2rem;
+  // color: $basic;
+
 }

@@ -22,6 +22,16 @@
 
               <div class="user_attribute">
                 <%= truncate( user.fullname, length:20) %>
+                <span class="" style="color: #f44336;font-weight: 600;">
+                  <% user.revisers.each do |reviser| %>
+                    <% if reviser.active == true %>
+                    <% end %>
+                    $<%= reviser.price_per %>/hr
+                  <% end %>
+
+                  <% %>
+                  <!-- <%= truncate( user.fullname, length:20) %> -->
+                </span>
               </div>
              </div>
 
