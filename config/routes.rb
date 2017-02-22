@@ -22,7 +22,7 @@ Rails.application.routes.draw do
  resources :pages
 
  #make sure to change this to user!!! instead of reservations!!!
-resources :reviser do
+resources :revisers do
   resources :reservations, only: [:create, :edit, :update]
 end
 
@@ -41,6 +41,8 @@ get '/received' => 'reservations#received'
 
 get '/school_list' => 'pages#school_list'
 get '/about' => 'pages#about'
+get '/pricing' => 'pages#pricing'
+
 
 get '/mentor' => 'pages#mentor'
 # get '/payment' => 'pages#payment'

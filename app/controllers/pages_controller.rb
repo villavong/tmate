@@ -1,24 +1,27 @@
 class PagesController < ApplicationController
 
-	before_action :authenticate_user!, except: [:home, :school_list, :about, :korea, :english, :japan, :china, :howtouse]
+	before_action :authenticate_user!, except: [:home, :school_list, :about, :korea, :english, :japan, :china, :howtouse, :pricing]
 
 
 	def home
 
 
-		@search = User.ransack(params[:q])
 
+		@search = User.yes.ransack(params[:q])
 
 		@results = @search.result
+		@arrUsers = @results.order("last_sign_in_at DESC").to_a.uniq.first(12)
 
+		# @pops = User.where(id: [207, 200, 197, 20])
+		###################################################################################
+
+		# @posts = Post.all.order("created_at DESC")
 		# @arrUsers = @results.order("last_sign_in_at DESC").to_a.uniq
 		# @arrUsers =User.all
 
 		# @arrUsers = @results.shuffle.first(24).to_a.uniq
-		@arrUsers = @results.shuffle.to_a.uniq
 
 
-		@posts = Post.all.order("created_at DESC")
 
 		# @posts1 = Post.where("board_id = ?", 1).order("created_at desc").limit(5)
 
@@ -62,7 +65,7 @@ class PagesController < ApplicationController
 
 			@specialties = Specialty.order(:specialty).uniq.pluck(:specialty)
 
-			@scholarships = Scholarship.order(:name).uniq.pluck(:name)
+			@scholarships = Scholarship.should_display.order(:name).uniq.pluck(:name)
 			@educations = Education.order(:education).uniq.pluck(:education)
 
 	end

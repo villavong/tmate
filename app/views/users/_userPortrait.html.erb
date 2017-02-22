@@ -26,11 +26,23 @@
                   <% user.revisers.each do |reviser| %>
                     <% if reviser.active == true %>
                     <% end %>
+                    <% if reviser.price_per == 5 %>
+                    $Coffee/hr
+
+                    <% elsif reviser.price_per == 10%>
+                    $Beer/hr
+
+                    <% elsif reviser.price_per == 15%>
+                    $Lunch/hr
+
+                    <% elsif reviser.price_per? %>
                     $<%= reviser.price_per %>/hr
+
+                    <% end %>
+
+
                   <% end %>
 
-                  <% %>
-                  <!-- <%= truncate( user.fullname, length:20) %> -->
                 </span>
               </div>
              </div>

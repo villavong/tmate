@@ -1,0 +1,68 @@
+.pricing {
+  width: 80%;
+  background-repeat: no-repeat;
+  clear: both;
+  margin-top: 3rem;
+  margin: 0 auto;
+
+}
+.arrow {
+  width: 10%;
+}
+#pricing-note {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 500;
+}
+#pricing-note-2 {
+  text-align: center;
+  font-size: .8rem;
+  color: red;
+  font-weight: 500;
+  margin: 0 0;
+}
+#pricing {
+    width: 80%;
+    margin: .5rem auto;
+    border-radius: .35rem;
+    -webkit-box-shadow: 2px 2px 5px 1px #707070;
+    -moz-box-shadow: 2px 2px 5px 1px #707070;
+    box-shadow: 2px 2px 5px 1px #707070;
+    transition: width .1s ease;
+}
+
+.pricing_img {
+    background-color: #fff;
+    background-position: center center;
+}
+
+.pricing_overview {
+    padding: 0 7.5%;
+    // border: 1px solid #ccc;
+    text-align: center;
+    transition: width 4s ease-in-out;
+    font-size:1rem;
+    padding-bottom: 1rem;
+
+    h1 {
+      font-size:1.5rem;
+      font-weight: 600;
+      margin: 0 0;
+      padding-bottom: 1rem;
+
+    }
+    h2 {
+      font-size:.9rem;
+      margin: 0 0;
+      margin-bottom: 1rem;
+      font-style: italic;
+
+    }
+    h3 {
+      font-size:1rem;
+      margin: 0 0;
+      // font-weight: 600;
+
+
+    }
+}

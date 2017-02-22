@@ -14,7 +14,8 @@ class User < ApplicationRecord
   # scope :yes, -> { where(status: nil).where(state: "mentor")}
   # scope :yes, -> { where(status: nil)}
   # scope :yes, -> { where.not(status: "no") || where(status: nil)}
-  scope :yes, -> { where(status: "yes")}
+  # scope :yes, -> { where(status: "yes")}
+  scope :yes, -> { where(status: "yes").where(state: "mentor")}
 
   # scope :yes, -> { where.not(status: nil)}
 

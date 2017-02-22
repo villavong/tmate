@@ -19,27 +19,61 @@
         <div class="comment-form col-md-8 col-sm-8" style="color:#888;padding:0;">
           <div class="row" id="profile_index" >
             <div class="comment-form col-sm-12" >
+
               <div class="user_attribute">
                 <%= truncate( user.fullname, length:20) %>
-              </div>
-             </div>
-             <div class="comment-form col-sm-12" >
-               <div class="user_attribute" style="color: #a94442;font-weight:700;">
-                 <b><%= truncate(user.school, length: 25) %></b>
-               </div>
+                <span class="" style="color: #f44336;font-weight: 600;">
+                  <% user.revisers.each do |reviser| %>
+                    <% if reviser.active == true %>
+                    <% end %>
+                    <% if reviser.price_per == 5 %>
+                    $Coffee/hr
 
-             </div>
-             <div class="comment-form col-sm-12" >
-               <div class="user_attribute" style="color: #000;">
-                 <%= truncate( user.major, length:25) %>
-               </div>
+                    <% elsif reviser.price_per == 10%>
+                    $Beer/hr
+
+                    <% elsif reviser.price_per == 15%>
+                    $Lunch/hr
+
+                    <% elsif reviser.price_per? %>
+                    $<%= reviser.price_per %>/hr
+
+                    <% end %>
+
+
+                  <% end %>
+
+                  <!-- <%= truncate( user.fullname, length:20) %> -->
+                </span>
               </div>
+             </div>
+
              <div class="comment-form col-sm-12" >
                <div class="user_attribute" style="color:#fed8aa;">
                  <b><i>"<%= truncate(user.description, length: 20) %>"</i></b>    <br>
 
                </div>
              </div>
+
+             <!-- <div class="comment-form col-sm-12" >
+               Nationality:
+               <div class="user_attribute">
+                 <%= truncate( user.country, length:15) %>
+               </div>
+              </div> -->
+             <div class="comment-form col-sm-12" >
+
+               <div class="user_attribute" style="color: #a94442;font-weight:700;">
+                 <b><%= truncate(user.school, length: 25) %></b>
+               </div>
+
+             </div>
+             <div class="comment-form col-sm-12" >
+               <div class="user_attribute">
+                 <%= truncate( user.major, length:25) %>
+               </div>
+              </div>
+
 
           </div>
         </div>

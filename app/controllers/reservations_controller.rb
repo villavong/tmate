@@ -35,7 +35,7 @@ def create
 
 	reviser = Reviser.find(params[:reviser_id])
 		@reservation = current_user.reservations.create(reservation_params)
-
+		# reviser.user.paypal
 		if @reservation
 			# send request to PayPal
 			values = {
