@@ -66,6 +66,7 @@ class PagesController < ApplicationController
 			@specialties = Specialty.order(:specialty).uniq.pluck(:specialty)
 
 			@scholarships = Scholarship.should_display.order(:name).uniq.pluck(:name)
+			
 			@educations = Education.order(:education).uniq.pluck(:education)
 
 	end

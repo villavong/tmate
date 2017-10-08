@@ -249,6 +249,7 @@ $(function() {
             <% if user.status != "no"%>
             <% if user.state == "mentor" %>
 
+
                 <%= link_to new_message_path(to: user.id) do %>
                 <% end %>
 
@@ -258,9 +259,9 @@ $(function() {
                   <%= render 'userPortrait', user: user %>
                 </div>
                 <% end %>
+            <% end %>
+            <% end %>
 
-              <% end %>
-              <% end %>
 
 
 

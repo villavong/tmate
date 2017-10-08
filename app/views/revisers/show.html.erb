@@ -13,7 +13,7 @@
 		<div class="" style="float:left;">
 				<%= render "userportrait" %>
 		</div>
-		<%= form_for([@user, @user.reservations.new]) do |f| %>
+		<%= form_for([@reviser, @reviser.reservations.new]) do |f| %>
 		<div class="col l10" style="">
 			<%= render 'reservations/form', f: f %>
 			<div class="cf" style="float:right;">

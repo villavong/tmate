@@ -5,12 +5,8 @@ before_action :check_mentor, only: [:show]
 before_action :set_user, except: [:index, :show]
 	def index
 
-
-
-
-
 		@search = User.yes.ransack(params[:q])
-		@results = @search.result.paginate(:page => params[:page], :per_page => 24)
+		@results = @search.result.paginate(:page => params[:page], :per_page => 54)
 
 		@arrUsers = @results.order("last_sign_in_at DESC").to_a.uniq
 

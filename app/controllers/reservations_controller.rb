@@ -11,7 +11,6 @@ def preload
 	reviser = Reviser.find(params[:reviser_id])
 	today = Date.today
 	reservations = reviser.reservations.where("due_date >= ?", today, today)
-
 	render json: reservations
 
 end
